@@ -9,7 +9,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 text-sm text-[#E0E0E0] mix-blend-difference">
+    <header className="fixed top-0 left-0 w-full z-50 p-6 md:p-8 text-base text-[#E0E0E0] mix-blend-difference">
       <div className="max-w-full mx-auto flex justify-between items-center relative">
         <div className="flex space-x-6">
           <a href="#" className="hover:text-white transition-colors">Design</a>
