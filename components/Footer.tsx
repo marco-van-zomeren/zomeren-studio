@@ -4,7 +4,7 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="px-6 md:px-8 py-24 bg-[#111] overflow-hidden">
+    <footer className="px-6 md:px-8 py-24 bg-[#0D0D0D] overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <AnimateOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
