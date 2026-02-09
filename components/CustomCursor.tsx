@@ -15,7 +15,7 @@ const CustomCursor: React.FC = () => {
 
         const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
         const mouse = { x: pos.x, y: pos.y };
-        const speed = 0.1;
+        const speed = 0.4;
 
         const xSet = gsap.quickSetter(cursor, "x", "px");
         const ySet = gsap.quickSetter(cursor, "y", "px");
