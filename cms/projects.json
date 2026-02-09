@@ -1,0 +1,148 @@
+
+[
+    {
+        "id": 1,
+        "title": "Mindstone",
+        "category": "Branding",
+        "heroImage": "https://i.imgur.com/nAvsVha.png",
+        "aspectRatio": "aspect-[5/4]",
+        "what": "Brand identity",
+        "where": "WADM",
+        "role": "Designer",
+        "description": [
+            "Mindstone is an innovative learning platform designed to help users organize, share, and master knowledge. The challenge was to create a brand identity that felt both intelligent and accessible, reflecting the platform's power and user-friendliness.",
+            "We developed a visual system based on the concept of interconnected nodes of information. The logo, a stylized 'M' forming a neural network, represents the process of learning and connection. A vibrant yet professional color palette and clean typography ensure the interface is engaging and easy to navigate, allowing the user's content to take center stage."
+        ],
+        "gallery": [
+            "https://i.imgur.com/E8wAxy1.png",
+            "https://i.imgur.com/1vLd2yX.png",
+            "https://i.imgur.com/gK1qYyT.png"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Gearfreak",
+        "category": "Branding",
+        "heroImage": "https://i.imgur.com/E8wAxy1.png",
+        "aspectRatio": "aspect-[9/16]",
+        "what": "Brand Identity & E-commerce",
+        "where": "Freelance",
+        "role": "Lead Designer",
+        "description": [
+            "Gearfreak is a premier retailer for outdoor and adventure equipment. The goal was to craft a rugged, reliable brand identity that speaks to outdoor enthusiasts.",
+            "The final brand system is bold and impactful, using strong typography and an earthy color palette to evoke a sense of adventure and durability."
+        ],
+        "gallery": [
+            "https://i.imgur.com/nAvsVha.png",
+            "https://i.imgur.com/qL6pS4N.png"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Holism Book",
+        "category": "UI/UX",
+        "heroImage": "https://i.imgur.com/1vLd2yX.png",
+        "aspectRatio": "aspect-video",
+        "what": "Editorial Design",
+        "where": "Personal Project",
+        "role": "Author & Designer",
+        "description": [
+            "This project involved the editorial design and layout for 'Holism,' a book exploring interconnectedness in design and nature.",
+            "The design uses a clean, minimalist grid system, allowing the powerful imagery and thoughtful text to shine. The typography is elegant and readable, creating a serene reading experience."
+        ],
+        "gallery": [
+            "https://i.imgur.com/gK1qYyT.png",
+            "https://i.imgur.com/nAvsVha.png"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Creative Laptop",
+        "category": "Motion",
+        "heroImage": "https://i.imgur.com/gK1qYyT.png",
+        "aspectRatio": "aspect-video",
+        "what": "Motion Graphics",
+        "where": "Client Project",
+        "role": "Motion Designer",
+        "description": [
+            "A motion graphics piece showcasing a fictional creative software suite.",
+            "The animation is fluid and dynamic, using kinetic typography and vibrant transitions to highlight the software's key features and creative potential."
+        ],
+        "gallery": []
+    },
+    {
+        "id": 5,
+        "title": "Tablet Mockup",
+        "category": "UI/UX",
+        "heroImage": "https://i.imgur.com/qL6pS4N.png",
+        "aspectRatio": "aspect-video",
+        "what": "UI/UX Concept",
+        "where": "Portfolio Piece",
+        "role": "Product Designer",
+        "description": [
+            "UI/UX concept for a productivity app designed for tablet devices.",
+            "The interface is clean, intuitive, and gesture-driven, focusing on a seamless user workflow and minimizing distractions."
+        ],
+        "gallery": []
+    },
+    {
+        "id": 6,
+        "title": "AI Concept",
+        "category": "AI",
+        "heroImage": "https://images.unsplash.com/photo-1677756119/photo-1677756119517-756a188d2d94?q=80&w=800",
+        "aspectRatio": "aspect-video",
+        "what": "Conceptual Art",
+        "where": "Personal Exploration",
+        "role": "Visual Designer",
+        "description": [
+            "Exploring the visual language of artificial intelligence through a series of conceptual designs.",
+            "These visuals blend organic and geometric forms to represent the complex, evolving nature of AI."
+        ],
+        "gallery": []
+    },
+    {
+        "id": 7,
+        "title": "Brand Identity",
+        "category": "Branding",
+        "heroImage": "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?q=80&w=800",
+        "aspectRatio": "aspect-video",
+        "what": "Corporate Branding",
+        "where": "Agency Work",
+        "role": "Senior Designer",
+        "description": [
+            "A comprehensive brand identity project for a modern consultancy firm.",
+            "The identity is built on a foundation of trust and sophistication, using a timeless color palette and strong, clear typography."
+        ],
+        "gallery": []
+    },
+    {
+        "id": 8,
+        "title": "Kinetic Typography",
+        "category": "Motion",
+        "heroImage": "https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=800",
+        "aspectRatio": "aspect-video",
+        "what": "Title Sequence",
+        "where": "Freelance",
+        "role": "Animator",
+        "description": [
+            "An animated title sequence using kinetic typography to convey a sense of urgency and excitement.",
+            "The motion is tightly synchronized with a dynamic soundtrack, creating a powerful and engaging visual experience."
+        ],
+        "gallery": []
+    },
+    {
+        "id": 9,
+        "title": "SaaS Platform",
+        "category": "UI/UX",
+        "heroImage": "https://images.unsplash.com/photo-1559028006-44d5a2b39f96?q=80&w=800",
+        "aspectRatio": "aspect-video",
+        "what": "Product Redesign",
+        "where": "In-house",
+        "role": "Lead UI/UX Designer",
+        "description": [
+            "Redesign of a complex SaaS platform to improve usability and create a more modern user experience.",
+            "The new design introduces a clear visual hierarchy, a streamlined navigation system, and a component-based design system for future scalability."
+        ],
+        "gallery": []
+    }
+]
