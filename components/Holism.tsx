@@ -49,8 +49,8 @@ const Holism: React.FC = () => {
                     <AnimateOnScroll className="text-center md:text-left" delay={200}>
                         <h2 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tighter">Holism<br />Design</h2>
                         <div className="mt-12 flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
-                            <a href="#" className="bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-200 transition-colors">READ MANIFEST</a>
-                            <a href="#" className="group inline-flex items-center text-base text-white">
+                            <a href="#" className="bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-200 transition-colors" data-cursor-type="link">READ MANIFEST</a>
+                            <a href="#" className="group inline-flex items-center text-base text-white" data-cursor-type="link">
                                 <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
                                 <span className="ml-2">BOOK AS SPEAKER</span>
                             </a>

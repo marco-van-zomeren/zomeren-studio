@@ -11,6 +11,7 @@ import AboutPage from './components/AboutPage';
 import WorkPage from './components/WorkPage';
 import HeroTransition from './components/HeroTransition';
 import ProjectPage from './components/ProjectPage';
+import CustomCursor from './components/CustomCursor';
 
 type Page = 'home' | 'work' | 'about' | 'project';
 
@@ -30,7 +31,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#0D0D0D] text-white min-h-screen font-sans antialiased selection:bg-white selection:text-black">
+    <div className="bg-[#0D0D0D] text-white min-h-screen font-sans antialiased selection:bg-white selection:text-black cursor-none">
+      <CustomCursor />
       <Header onNavigate={handleNavigate} />
       
       {currentPage === 'home' && (

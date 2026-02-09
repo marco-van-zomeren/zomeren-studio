@@ -55,7 +55,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ projectId, onNavigate, onSele
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center">
         <h1 className="text-4xl mb-4">Project not found</h1>
-        <button onClick={() => onNavigate('work')} className="text-lg underline hover:text-gray-300">
+        <button onClick={() => onNavigate('work')} className="text-lg underline hover:text-gray-300" data-cursor-type="link">
           Return to Work
         </button>
       </div>
@@ -93,7 +93,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ projectId, onNavigate, onSele
                 </div>
             </div>
 
-            <div className="md:col-span-7 md:col-start-6 text-gray-300 text-xl leading-relaxed space-y-6">
+            <div className="md:col-span-7 md:col-start-6 text-gray-300 text-xl leading- relaxed space-y-6">
                 {project.description.map((paragraph, index) => (
                     <p key={index}>{paragraph}</p>
                 ))}
@@ -119,6 +119,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ projectId, onNavigate, onSele
             onClick={() => onSelectProject(nextProject.id)} 
             className="group h-[60vh] flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat relative cursor-pointer" 
             style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${nextProject.heroImage})` }}
+            data-cursor-type="view"
           >
             <p className="text-gray-300 text-sm tracking-widest uppercase">NEXT PROJECT</p>
             <h2 className="text-5xl md:text-7xl mt-4 transition-transform duration-300 group-hover:translate-y-[-4px]">{nextProject.title}</h2>

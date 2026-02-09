@@ -54,7 +54,7 @@ const AboutPage: React.FC = () => {
               </div>
               <div>
                 <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-4">Contact</h2>
-                <a href="mailto:marco@zomeren.studio" className="text-lg hover:text-white transition-colors">
+                <a href="mailto:marco@zomeren.studio" className="text-lg hover:text-white transition-colors" data-cursor-type="link">
                   marco@zomeren.studio
                 </a>
               </div>

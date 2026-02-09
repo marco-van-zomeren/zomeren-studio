@@ -46,7 +46,7 @@ const Intro: React.FC = () => {
                             <p className="text-3xl md:text-4xl lg:text-5xl leading-tight">
                                 Marco is a designer with a holistic approach, whose strength lies in understanding, visualizing and shaping core values.
                             </p>
-                            <a href="#" className="group inline-flex items-center mt-8 text-base text-white">
+                            <a href="#" className="group inline-flex items-center mt-8 text-base text-white" data-cursor-type="link">
                                  <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
                                  <span className="ml-2">FULL STORY</span>
                             </a>

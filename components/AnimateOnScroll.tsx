@@ -1,14 +1,13 @@
 
-import React, { useState, useEffect, useRef, ReactNode } from 'react';
+import React, { useState, useEffect, useRef, ReactNode, HTMLAttributes } from 'react';
 
-interface AnimateOnScrollProps {
+// Props now include all standard div attributes
+interface AnimateOnScrollProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
-  className?: string;
   delay?: number;
-  onClick?: () => void;
 }
 
-const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({ children, className = '', delay = 0, onClick }) => {
+const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({ children, className = '', delay = 0, style, ...rest }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -43,8 +42,11 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({ children, className =
       className={`transition-all ease-out duration-1000 ${className} ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
-      style={{ transitionDelay: `${delay}ms` }}
-      onClick={onClick}
+      style={{
+        ...style,
+        transitionDelay: `${delay}ms`
+      }}
+      {...rest}
     >
       {children}
     </div>

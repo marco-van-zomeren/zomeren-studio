@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
             <p className="mt-6 text-3xl md:text-4xl text-gray-500">
               Let the sun shine on your socials
             </p>
-            <a href="#" className="group inline-flex items-center mt-16 text-xl text-white">
+            <a href="#" className="group inline-flex items-center mt-16 text-xl text-white" data-cursor-type="link">
               <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
               <span className="ml-2">Let's work</span>
             </a>

@@ -30,6 +30,7 @@ const SwiperNavButtons = () => {
             onClick={() => swiper.slidePrev()} 
             className="w-12 h-12 rounded-full border border-gray-600 text-gray-400 hover:bg-white hover:border-white hover:text-black transition-colors flex items-center justify-center"
             aria-label="Previous testimonial"
+            data-cursor-type="link"
         >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -39,6 +40,7 @@ const SwiperNavButtons = () => {
             onClick={() => swiper.slideNext()} 
             className="w-12 h-12 rounded-full border border-gray-600 text-gray-400 hover:bg-white hover:border-white hover:text-black transition-colors flex items-center justify-center"
             aria-label="Next testimonial"
+            data-cursor-type="link"
         >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />

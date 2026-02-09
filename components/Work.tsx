@@ -35,7 +35,7 @@ const Work: React.FC<WorkProps> = ({ onProjectSelect }) => {
                 Senior Brand / Visual designer at KR Communicatie, formerly at WADM.
               </p>
             </div>
-            <a href="#" className="group inline-flex items-center text-base text-white whitespace-nowrap self-start md:self-center shrink-0 ml-0 md:ml-8">
+            <a href="#" className="group inline-flex items-center text-base text-white whitespace-nowrap self-start md:self-center shrink-0 ml-0 md:ml-8" data-cursor-type="link">
               <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
               <span className="ml-2">DISCOVER KR</span>
             </a>
@@ -48,6 +48,7 @@ const Work: React.FC<WorkProps> = ({ onProjectSelect }) => {
                 className="group cursor-pointer" 
                 delay={index * 200}
                 onClick={() => onProjectSelect(project.id)}
+                data-cursor-type="view"
              >
                 <div className={`overflow-hidden ${project.aspectRatio}`}>
                     <img src={project.heroImage} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
