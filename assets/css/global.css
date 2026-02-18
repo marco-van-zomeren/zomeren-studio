@@ -17,6 +17,14 @@ h6 {
   font-weight: 700 !important;
 }
 
+h1 {
+  text-indent: clamp(1.2rem, 10vw, 2em);
+}
+
+.project-page h1 {
+  text-indent: 0;
+}
+
 @view-transition {
   navigation: auto;
 }
@@ -202,6 +210,17 @@ h6 {
   transform: translateY(0);
   transition: transform 0.5s cubic-bezier(.2,.9,.3,1);
   white-space: nowrap;
+}
+
+.heading-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  text-indent: 0 !important;
+}
+
+.heading-word-mask .word {
+  text-indent: 0 !important;
 }
 
 .fade-in-stagger .word {
