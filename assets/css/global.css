@@ -1,0 +1,267 @@
+@import url("https://use.typekit.net/hts2msq.css");
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: area-normal, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700 !important;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.45s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(root) {
+  animation-name: page-fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: page-fade-in;
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes page-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms;
+  }
+}
+
+.line-reveal-link {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: end;
+  text-decoration: none;
+}
+
+.line-reveal-inline {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1.25;
+}
+
+.line-reveal-link::before,
+.line-reveal-link::after,
+.line-reveal-inline::before,
+.line-reveal-inline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+}
+
+.line-reveal-link::before,
+.line-reveal-inline::before {
+  background: color-mix(in oklab, currentColor 25%, transparent);
+}
+
+.line-reveal-link::after,
+.line-reveal-inline::after {
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.line-reveal-link:hover::after,
+.line-reveal-inline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.faq-item .faq-plus {
+  display: inline-block;
+  transform-origin: center center;
+  line-height: 1;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 100,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+.faq-item[open] .faq-plus {
+  animation: faq-plus-open 0.55s ease-in-out both;
+}
+
+.faq-item:not([open]) .faq-plus {
+  animation: faq-plus-close 0.38s ease-in-out both;
+}
+
+@keyframes faq-plus-open {
+  0% {
+    transform: rotate(0deg);
+  }
+  72% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes faq-plus-close {
+  0% {
+    transform: rotate(405deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.faq-item .faq-answer {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.45s ease-in-out, opacity 0.35s ease-in-out;
+  opacity: 0;
+}
+
+.faq-item .faq-answer-inner {
+  overflow: visible;
+}
+
+.faq-item[open] .faq-answer {
+  opacity: 1;
+}
+
+.reviews-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.reviews-swiper .swiper-slide {
+  height: auto;
+}
+
+.reviews-prev,
+.reviews-next {
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.reviews-prev:hover,
+.reviews-next:hover {
+  border-color: currentColor;
+}
+
+.header-video {
+  transform-origin: bottom right;
+  will-change: transform;
+}
+
+.words-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.5em;
+  vertical-align: middle;
+  font-size: 1em;
+  line-height: 1.25em;
+  margin-top: -0.15em;
+}
+
+.word {
+  display: inline-block;
+  transform: translateY(0);
+  transition: transform 0.5s cubic-bezier(.2,.9,.3,1);
+  white-space: nowrap;
+}
+
+.fade-in-stagger .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  text-indent: 0 !important;
+}
+
+.fade-in-stagger span {
+  text-indent: 0 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .has-contrast-color img {
+    filter: invert(1);
+  }
+}
+
+.footer-logo-svg {
+  width: 100%;
+  color: #f5f5f5;
+}
+
+.footer-logo-svg svg {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  transform: translateY(10%);
+}
+
+.footer-logo-svg img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  transform: translateY(10%);
+}
+
+.footer-logo-svg svg path {
+  fill: currentColor;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer-logo-svg {
+    color: #f5f5f5;
+  }
+
+  .footer-logo-svg img {
+    filter: invert(1);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .footer-logo-svg {
+    color: #f5f5f5;
+  }
+
+  .footer-logo-svg img {
+    filter: none;
+  }
+}
