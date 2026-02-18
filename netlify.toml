@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build:prod"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "20"
