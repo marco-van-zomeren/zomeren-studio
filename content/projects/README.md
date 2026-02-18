@@ -7,6 +7,7 @@ Use one markdown file per project in this folder.
 - gearfreak.md
 - medigo.md
 - ultimo.md
+- keller.md
 
 Each file contains:
 - frontmatter (meta, cover image, related projects, optional video)

@@ -99,7 +99,7 @@
 
   var isProjectPage = window.location.pathname.indexOf("/projects/") !== -1;
   if (isProjectPage) {
-    var mediaItems = gsap.utils.toArray("main img, main video");
+    var mediaItems = gsap.utils.toArray("main img:not(.project-featured-image), main video");
 
     mediaItems.forEach(function (media) {
       gsap.fromTo(

@@ -265,3 +265,25 @@ h6 {
     filter: none;
   }
 }
+
+.project-featured-image {
+  transform: scale(0.25);
+  opacity: 0;
+  transform-origin: center center;
+  animation: featuredImageFadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes featuredImageFadeIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-featured-image {
+    transform: none;
+    opacity: 1;
+    animation: none;
+  }
+}

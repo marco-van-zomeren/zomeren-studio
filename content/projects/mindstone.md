@@ -11,11 +11,15 @@ cover_image: /Users/marco/Desktop/zomeren/Site/assets/images/projects/mindstone/
 video_embed_url: none
 related_projects:
   - slug: gearfreak
+    title: Gearfreak
     url: /Users/marco/Desktop/zomeren/Site/projects/gearfreak.html
     category: Branding
-  - slug: ultimo
-    url: /Users/marco/Desktop/zomeren/Site/projects/ultimo.html
+    cover_image: /Users/marco/Desktop/zomeren/Site/assets/images/projects/gearfreak/1_gearfreak_design-by-wadm.webp
+  - slug: keller
+    title: Keller
+    url: /Users/marco/Desktop/zomeren/Site/projects/keller.html
     category: Branding
+    cover_image: /Users/marco/Desktop/zomeren/Site/assets/images/projects/keller/1-keller-design-by-wadm.webp
 ---
 
 ## Description
