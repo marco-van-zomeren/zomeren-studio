@@ -1078,6 +1078,10 @@ video {
   border-color: rgb(0 0 0 / 0.1);
 }
 
+.border-black\/25 {
+  border-color: rgb(0 0 0 / 0.25);
+}
+
 .border-black\/35 {
   border-color: rgb(0 0 0 / 0.35);
 }
@@ -1086,29 +1090,16 @@ video {
   border-color: rgb(0 0 0 / 0.4);
 }
 
+.border-black\/45 {
+  border-color: rgb(0 0 0 / 0.45);
+}
+
 .border-black\/60 {
   border-color: rgb(0 0 0 / 0.6);
 }
 
-.border-white\/25 {
-  border-color: rgb(255 255 255 / 0.25);
-}
-
-.border-white\/40 {
-  border-color: rgb(255 255 255 / 0.4);
-}
-
-.border-white\/45 {
-  border-color: rgb(255 255 255 / 0.45);
-}
-
-.border-white\/65 {
-  border-color: rgb(255 255 255 / 0.65);
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+.border-black\/65 {
+  border-color: rgb(0 0 0 / 0.65);
 }
 
 .bg-white {
@@ -1691,25 +1682,20 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
+.text-black\/55 {
+  color: rgb(0 0 0 / 0.55);
+}
+
 .text-black\/75 {
   color: rgb(0 0 0 / 0.75);
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+.text-black\/90 {
+  color: rgb(0 0 0 / 0.9);
 }
 
-.text-white\/55 {
-  color: rgb(255 255 255 / 0.55);
-}
-
-.text-white\/90 {
-  color: rgb(255 255 255 / 0.9);
-}
-
-.text-white\/95 {
-  color: rgb(255 255 255 / 0.95);
+.text-black\/95 {
+  color: rgb(0 0 0 / 0.95);
 }
 
 .underline {
@@ -2311,12 +2297,24 @@ video {
     border-color: rgb(255 255 255 / 0.15);
   }
 
+  .dark\:border-white\/25 {
+    border-color: rgb(255 255 255 / 0.25);
+  }
+
   .dark\:border-white\/35 {
     border-color: rgb(255 255 255 / 0.35);
   }
 
+  .dark\:border-white\/40 {
+    border-color: rgb(255 255 255 / 0.4);
+  }
+
   .dark\:border-white\/45 {
     border-color: rgb(255 255 255 / 0.45);
+  }
+
+  .dark\:border-white\/65 {
+    border-color: rgb(255 255 255 / 0.65);
   }
 
   .dark\:border-white\/75 {
@@ -2333,8 +2331,20 @@ video {
     color: rgb(255 255 255 / var(--tw-text-opacity, 1));
   }
 
+  .dark\:text-white\/55 {
+    color: rgb(255 255 255 / 0.55);
+  }
+
   .dark\:text-white\/75 {
     color: rgb(255 255 255 / 0.75);
+  }
+
+  .dark\:text-white\/90 {
+    color: rgb(255 255 255 / 0.9);
+  }
+
+  .dark\:text-white\/95 {
+    color: rgb(255 255 255 / 0.95);
   }
 }
 

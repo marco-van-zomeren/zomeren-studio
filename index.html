@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="assets/css/global.css" />
   </head>
   <body class="bg-white text-black antialiased dark:bg-black dark:text-white">
-    <header class="fixed inset-x-0 top-0 z-[70] px-6 py-7 text-white md:mix-blend-difference md:px-12 md:py-8">
+    <header class="fixed inset-x-0 top-0 z-[70] px-6 py-7 text-black dark:text-white md:mix-blend-difference md:px-12 md:py-8">
       <div class="relative flex w-full items-center justify-between">
         <input id="menu-toggle" type="checkbox" class="peer sr-only" />
         <a href="index.html" class="text-[clamp(1.9rem,5vw,2.2rem)] leading-none md:hidden">zomeren.studio</a>
@@ -53,8 +53,8 @@
           </div>
         </nav>
 
-        <div class="pointer-events-none fixed inset-0 z-40 h-screen w-screen bg-black px-6 pb-10 pt-28 opacity-0 transition-opacity duration-300 ease-in-out peer-checked:pointer-events-auto peer-checked:opacity-100 md:hidden mix-blend-normal">
-          <nav aria-label="Mobile Primary" class="flex flex-col gap-6 text-[clamp(1.3rem,8vw,2.5rem)] leading-[1.05] tracking-[-0.012em] text-white">
+        <div class="pointer-events-none fixed inset-0 z-40 h-screen w-screen bg-white dark:bg-black px-6 pb-10 pt-28 opacity-0 transition-opacity duration-300 ease-in-out peer-checked:pointer-events-auto peer-checked:opacity-100 md:hidden mix-blend-normal">
+          <nav aria-label="Mobile Primary" class="flex flex-col gap-6 text-[clamp(1.3rem,8vw,2.5rem)] leading-[1.05] tracking-[-0.012em] text-black dark:text-white">
             <a href="design.html">Design</a>
             <a href="work.html">Work</a>
             <a href="about.html">About</a>
@@ -68,7 +68,7 @@
     </header>
 
     <main class="pt-20 md:pt-24">
-      <section data-reveal class="bg-black px-6 pb-24 pt-8 text-white md:px-12 md:pb-36 md:pt-12 py-40">
+      <section data-reveal class="bg-white dark:bg-black px-6 pb-24 pt-8 text-black dark:text-white md:px-12 md:pb-36 md:pt-12 py-40">
         <div class="grid grid-cols-4 gap-8 intro lg:grid-cols-12">
           <div class="col-span-12 lg:col-span-3">
             <figure>
@@ -78,7 +78,7 @@
                 class="aspect-[2/3] w-full object-cover"
               />
             </figure>
-            <p class="mt-6 max-w-[30ch] text-[clamp(0.95rem,0.95rem+((1vw-0.2rem)*0.7),1.18rem)] leading-[1.28] tracking-[-0.006em] text-white/95">
+            <p class="mt-6 max-w-[30ch] text-[clamp(0.95rem,0.95rem+((1vw-0.2rem)*0.7),1.18rem)] leading-[1.28] tracking-[-0.006em] text-black/95 dark:text-white/95">
               Creative hub of <a href="about.html" class="underline underline-offset-4">Marco</a> van Zomeren. Senior Brand /
               Visual Designer at KR Communicatie, formerly at WADM ✦ Bold over well behaved so something beautiful never beholds
               boring.
@@ -91,9 +91,9 @@
               &#10022; Making brands resonate with their highest potential.
               </h1>
               <h2 class="mt-8 text-[clamp(1.65rem,1.65rem+((1vw-0.2rem)*1.6),2.8rem)] leading-[1.1] tracking-[-0.016em]">
-                <span class="text-white/55">Let the sun shine on your</span>
+                <span class="text-black/55 dark:text-white/55">Let the sun shine on your</span>
                 <span class="words-wrapper">
-                  <span id="word" class="word text-white">brand</span>
+                  <span id="word" class="word text-black dark:text-white">brand</span>
                 </span>
               </h2>
             </div>
@@ -239,7 +239,7 @@
         </div>
       </section>
 
-      <section data-reveal class="bg-black px-6 pb-28 pt-12 text-white md:px-12 md:pb-40 py-40">
+      <section data-reveal class="bg-white dark:bg-black px-6 pb-28 pt-12 text-black dark:text-white md:px-12 md:pb-40 py-40">
         <div class="grid grid-cols-4 gap-8 pb-8 md:pb-10 lg:grid-cols-12">
           <div class="col-span-4 lg:col-span-2">
             <p class="mt-[0.75em] text-[clamp(1.2rem,1.8vw,1.9rem)] leading-none tracking-[-0.01em]">03</p>
@@ -255,7 +255,7 @@
           </div>
 
           <div class="col-span-4 lg:col-span-4">
-            <p class="text-[clamp(1.25rem,2vw,3rem)] leading-[1.24] tracking-[-0.012em] text-white/92">
+            <p class="text-[clamp(1.25rem,2vw,3rem)] leading-[1.24] tracking-[-0.012em] text-black/92 dark:text-white/92">
               My work is sharp, considered, and purpose-driven. But it’s my Libra Moon that softens the edges, bringing in
               harmony, beauty, and a deep sensitivity to what feels right. It’s not just about design that works. It’s about design
               that connects.
@@ -264,26 +264,26 @@
         </div>
 
         <div class="grid grid-cols-4 gap-8 pb-16 md:pb-24 lg:grid-cols-12">
-          <article class="col-span-4 border-t border-white/65 py-6 lg:border-l lg:border-t-0 lg:py-0 lg:pl-4">
+          <article class="col-span-4 border-t border-black/65 dark:border-white/65 py-6 lg:border-l lg:border-t-0 lg:py-0 lg:pl-4">
             <p class="text-[clamp(4.509em,4.509rem+((1vw-0.2em)*8.613),10em)] leading-[0.9] tracking-[-0.02em]">1</p>
             <h3 class="mt-4 text-[clamp(2rem,3.2vw,4.8rem)] leading-[1] tracking-[-0.02em]">Virgo sun</h3>
-            <p class="mt-4 max-w-[26ch] text-[clamp(1.15rem,1.8vw,2.5rem)] leading-[1.2] tracking-[-0.01em] text-white/92">
+            <p class="mt-4 max-w-[26ch] text-[clamp(1.15rem,1.8vw,2.5rem)] leading-[1.2] tracking-[-0.01em] text-black/92 dark:text-white/92">
               I bring structure to chaos, polish to ideas, and intention to every detail.
             </p>
           </article>
 
-          <article class="col-span-4 border-t border-white/65 py-6 lg:border-l lg:border-t-0 lg:py-0 lg:pl-4">
+          <article class="col-span-4 border-t border-black/65 dark:border-white/65 py-6 lg:border-l lg:border-t-0 lg:py-0 lg:pl-4">
             <p class="text-[clamp(4.509em,4.509rem+((1vw-0.2em)*8.613),10em)] leading-[0.9] tracking-[-0.02em]">2</p>
             <h3 class="mt-4 text-[clamp(2rem,3.2vw,4.8rem)] leading-[1] tracking-[-0.02em]">Libra Moon</h3>
-            <p class="mt-4 max-w-[26ch] text-[clamp(1.15rem,1.8vw,2.5rem)] leading-[1.2] tracking-[-0.01em] text-white/92">
+            <p class="mt-4 max-w-[26ch] text-[clamp(1.15rem,1.8vw,2.5rem)] leading-[1.2] tracking-[-0.01em] text-black/92 dark:text-white/92">
               Bringing in harmony, beauty, and a deep sensitivity to what feels right.
             </p>
           </article>
 
-          <article class="col-span-4 border-t border-white/65 py-6 lg:border-l lg:border-t-0 lg:py-0 lg:pl-4">
+          <article class="col-span-4 border-t border-black/65 dark:border-white/65 py-6 lg:border-l lg:border-t-0 lg:py-0 lg:pl-4">
             <p class="text-[clamp(4.509em,4.509rem+((1vw-0.2em)*8.613),10em)] leading-[0.9] tracking-[-0.02em]">3</p>
             <h3 class="mt-4 text-[clamp(2rem,3.2vw,4.8rem)] leading-[1] tracking-[-0.02em]">Leo Rising</h3>
-            <p class="mt-4 max-w-[26ch] text-[clamp(1.15rem,1.8vw,2.5rem)] leading-[1.2] tracking-[-0.01em] text-white/92">
+            <p class="mt-4 max-w-[26ch] text-[clamp(1.15rem,1.8vw,2.5rem)] leading-[1.2] tracking-[-0.01em] text-black/92 dark:text-white/92">
               I carry it all with confidence and creative direction.
             </p>
           </article>
@@ -313,7 +313,7 @@
         </div>
       </section>
 
-      <section data-reveal class="bg-black px-6 pb-24 text-white md:px-12 md:pb-36 py-40">
+      <section data-reveal class="bg-white dark:bg-black px-6 pb-24 text-black dark:text-white md:px-12 md:pb-36 py-40">
         <div class="grid grid-cols-4 gap-8 pb-12 md:pb-16 lg:grid-cols-12">
           <div class="col-span-4 lg:col-span-2">
             <p class="mt-[0.75em] text-[clamp(1.2rem,1.8vw,1.9rem)] leading-none tracking-[-0.01em]">04</p>
@@ -498,7 +498,7 @@
         </div>
       </section>
 
-      <section data-reveal class="bg-black px-6 py-40 text-white md:px-12">
+      <section data-reveal class="bg-white dark:bg-black px-6 py-40 text-black dark:text-white md:px-12">
         <h2 class="w-full text-center text-[clamp(2.1rem,6vw,7.2rem)] leading-[1.04] tracking-[-0.02em]">
           I can make your logo bigger... than only beautiful
         </h2>
@@ -525,7 +525,7 @@
         </div>
       </section>
 
-      <section data-reveal class="bg-black px-6 py-40 text-white md:px-12">
+      <section data-reveal class="bg-white dark:bg-black px-6 py-40 text-black dark:text-white md:px-12">
         <div data-parallax-wrap class="relative pb-16 md:pb-24">
           <p class="text-left text-[clamp(2.6rem,11vw,12rem)] leading-[0.9] tracking-[-0.03em] font-[700]">Now let&rsquo;s get</p>
           <p class="text-right text-[clamp(2.6rem,11vw,12rem)] leading-[0.9] tracking-[-0.03em] font-[700]">some shit</p>
@@ -550,11 +550,11 @@
       </section>
 
     </main>
-    <footer class="bg-black px-6 pt-24 text-white md:px-12 md:pt-28">
+    <footer class="bg-white dark:bg-black px-6 pt-24 text-black dark:text-white md:px-12 md:pt-28">
       <div class="grid grid-cols-2 gap-x-10 gap-y-12 md:grid-cols-4 md:gap-x-14">
         <div>
           <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Design</h3>
-          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-white/92">
+          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
             <li><a href="branding.html">Branding</a></li>
             <li><a href="motion.html">Motion</a></li>
             <li><a href="ui-ux.html">UI/UX</a></li>
@@ -563,7 +563,7 @@
         </div>
         <div>
           <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Work</h3>
-          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-white/92">
+          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
             <li><a href="contact.html">Together</a></li>
             <li><a href="work.html">Portfolio</a></li>
             <li>Music (coming soon)</li>
@@ -572,7 +572,7 @@
         </div>
         <div>
           <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">About</h3>
-          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-white/92">
+          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
             <li><a href="about.html">The Studio</a></li>
             <li><a href="about.html">Method</a></li>
             <li>Shop (coming soon)</li>
@@ -581,7 +581,7 @@
         </div>
         <div>
           <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Holism</h3>
-          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-white/92">
+          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
             <li><a href="holism.html">Holism Design</a></li>
             <li><a href="astrology.html">Astrology</a></li>
             <li>Human (coming soon)</li>
