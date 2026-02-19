@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.footer-logo-svg svg path {
+  fill: currentColor;
+}

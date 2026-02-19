@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/global.css" />
   </head>
   <body class="bg-white text-black antialiased dark:bg-black dark:text-white">
-    <header class="fixed inset-x-0 top-0 z-[70] px-6 py-7 text-black dark:text-white md:mix-blend-difference md:px-12 md:py-8">
+    <header class="fixed inset-x-0 top-0 z-[70] px-6 py-7 text-black dark:text-white md:text-white md:mix-blend-difference md:px-12 md:py-8">
       <div class="relative flex w-full items-center justify-between">
         <input id="menu-toggle" type="checkbox" class="peer sr-only" />
         <a href="index.html" class="text-[clamp(1.9rem,5vw,2.2rem)] leading-none md:hidden">zomeren.studio</a>
@@ -22,9 +22,9 @@
           aria-label="Toggle menu"
           class="relative z-50 flex h-10 w-10 cursor-pointer items-center justify-center md:hidden
           before:content-[''] before:absolute before:left-1/2 before:top-1/2 before:block before:h-px before:w-6 before:-translate-x-1/2 before:-translate-y-[4px]
-          before:bg-white before:transition-transform before:duration-300 before:ease-in-out
+          before:bg-current before:transition-transform before:duration-300 before:ease-in-out
           after:content-[''] after:absolute after:left-1/2 after:top-1/2 after:block after:h-px after:w-6 after:-translate-x-1/2 after:translate-y-[4px]
-          after:bg-white after:transition-transform after:duration-300 after:ease-in-out
+          after:bg-current after:transition-transform after:duration-300 after:ease-in-out
           peer-checked:before:translate-y-0 peer-checked:before:rotate-45
           peer-checked:after:translate-y-0 peer-checked:after:-rotate-45"
         ></label>
@@ -136,7 +136,7 @@
         </div>
       </div>
       <div class="mt-20 overflow-hidden">
-        <div class="footer-logo-svg" data-svg-src="assets/svg/studio.svg" aria-hidden="true"><img src="assets/svg/studio.svg" alt="" class="w-full h-auto" /></div>
+        <div class="footer-logo-svg text-black dark:text-white" data-svg-src="assets/svg/studio.svg" aria-hidden="true"><img src="assets/svg/studio.svg" alt="" class="w-full h-auto invert dark:invert-0" /></div>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>

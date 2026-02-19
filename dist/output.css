@@ -1763,6 +1763,10 @@ video {
   text-indent: clamp(4rem,12vw,15rem);
 }
 
+.footer-logo-svg svg path {
+  fill: currentColor;
+}
+
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
@@ -1805,10 +1809,9 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.before\:bg-white::before {
+.before\:bg-current::before {
   content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  background-color: currentColor;
 }
 
 .before\:transition-transform::before {
@@ -1875,10 +1878,9 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.after\:bg-white::after {
+.after\:bg-current::after {
   content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  background-color: currentColor;
 }
 
 .after\:transition-transform::after {
@@ -2187,6 +2189,11 @@ video {
     padding-top: 9rem;
   }
 
+  .md\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  }
+
   .md\:mix-blend-difference {
     mix-blend-mode: difference;
   }
@@ -2345,6 +2352,11 @@ video {
 
   .dark\:text-white\/95 {
     color: rgb(255 255 255 / 0.95);
+  }
+
+  .dark\:invert-0 {
+    --tw-invert: invert(0);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 }
 
