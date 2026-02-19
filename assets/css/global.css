@@ -215,7 +215,11 @@ h1 {
 .heading-word-mask {
   display: inline-block;
   overflow: hidden;
-  vertical-align: top;
+  height: 1.35em;
+  line-height: 1.2em;
+  vertical-align: baseline;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
   text-indent: 0 !important;
 }
 
@@ -226,7 +230,7 @@ h1 {
 .fade-in-stagger .word {
   display: inline-block;
   opacity: 0;
-  transform: translateY(20px);
+  transform: none;
   text-indent: 0 !important;
 }
 

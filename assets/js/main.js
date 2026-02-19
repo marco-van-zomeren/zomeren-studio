@@ -50,7 +50,6 @@
 
       var outer = document.createElement("span");
       outer.className = "heading-word-mask";
-      outer.style.height = "1.35em";
 
       var inner = document.createElement("span");
       inner.className = "word";
@@ -87,11 +86,11 @@
     var parts = splitHeadingWords(heading);
     if (!parts.length) return;
 
-    gsap.set(parts, { autoAlpha: 0, y: 20 });
+    gsap.set(parts, { autoAlpha: 0, yPercent: 120 });
 
     gsap.to(parts, {
       autoAlpha: 1,
-      y: 0,
+      yPercent: 0,
       duration: 0.85,
       ease: "power3.out",
       stagger: 0.06,
@@ -103,7 +102,12 @@
     });
   });
 
-  var revealItems = gsap.utils.toArray("[data-reveal]");
+  var revealItems = gsap
+    .utils
+    .toArray("[data-reveal]")
+    .filter(function (item) {
+      return !item.querySelector("h1.fade-in-stagger");
+    });
 
   revealItems.forEach(function (item) {
     gsap.fromTo(
