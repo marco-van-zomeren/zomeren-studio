@@ -8,7 +8,7 @@ what: Webdesign
 where: WADM
 role: Designer
 cover_image: /Users/marco/Desktop/zomeren/Site/assets/images/projects/medigo/1_medigo_design-by-wadm.webp
-video_embed_url: https://res.cloudinary.com/zomerenstudio/video/upload/v1771514508/Medigo_ScrollCapture_compilation_i14xds.mov
+video_embed_url: https://res.cloudinary.com/zomerenstudio/video/upload/f_mp4/v1771514508/Medigo_ScrollCapture_compilation_i14xds.mp4
 related_projects:
   - slug: mindstone
     url: /Users/marco/Desktop/zomeren/Site/projects/mindstone.html
@@ -28,7 +28,7 @@ The design direction balances professionalism and approachability. WADM built a 
 The result is a cohesive digital brand experience that strengthens Medigo’s market position and improves usability across the full journey. Institutions can navigate and evaluate faster, students can engage more easily, and the brand now communicates one consistent promise across touchpoints: healthcare and talent, connected with clarity.
 
 ## Media Sequence
-1. https://res.cloudinary.com/zomerenstudio/video/upload/v1771514508/Medigo_ScrollCapture_compilation_i14xds.mov
+1. https://res.cloudinary.com/zomerenstudio/video/upload/f_mp4/v1771514508/Medigo_ScrollCapture_compilation_i14xds.mp4
 2. /Users/marco/Desktop/zomeren/Site/assets/images/projects/medigo/1_medigo_design-by-wadm.webp
 3. /Users/marco/Desktop/zomeren/Site/assets/images/projects/medigo/2_medigo_design-by-wadm.webp
 4. /Users/marco/Desktop/zomeren/Site/assets/images/projects/medigo/3_medigo_design-by-wadm.webp
