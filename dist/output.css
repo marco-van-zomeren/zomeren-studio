@@ -788,6 +788,10 @@ video {
   height: 15rem;
 }
 
+.h-\[clamp\(5rem\2c 10vw\2c 20rem\)\] {
+  height: clamp(5rem,10vw,20rem);
+}
+
 .h-auto {
   height: auto;
 }
@@ -802,6 +806,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.max-h-\[20rem\] {
+  max-height: 20rem;
 }
 
 .w-10 {
@@ -851,6 +859,10 @@ video {
 
 .max-w-\[18ch\] {
   max-width: 18ch;
+}
+
+.max-w-\[20rem\] {
+  max-width: 20rem;
 }
 
 .max-w-\[23ch\] {
@@ -1040,6 +1052,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
 .justify-self-start {
@@ -1333,6 +1351,10 @@ video {
   font-size: clamp(1.25rem,2vw,3rem);
 }
 
+.text-\[clamp\(1\.2rem\2c 1\.45vw\2c 2rem\)\] {
+  font-size: clamp(1.2rem,1.45vw,2rem);
+}
+
 .text-\[clamp\(1\.2rem\2c 1\.5vw\2c 2rem\)\] {
   font-size: clamp(1.2rem,1.5vw,2rem);
 }
@@ -1579,6 +1601,10 @@ video {
 
 .leading-\[1\.2\] {
   line-height: 1.2;
+}
+
+.leading-\[1\.32\] {
+  line-height: 1.32;
 }
 
 .leading-\[1\.35\] {

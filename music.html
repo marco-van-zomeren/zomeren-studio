@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <title>Music - zomeren.studio</title>
+    <meta name="description" content="Singles by Marco Van Zomeren on Spotify." />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/global.css" />
+  </head>
+  <body class="bg-white text-black antialiased dark:bg-black dark:text-white">
+    <header class="fixed inset-x-0 top-0 z-[70] px-6 py-7 text-black dark:text-white md:px-12 md:py-8 md:text-white md:mix-blend-difference">
+      <div class="relative flex w-full items-center justify-between">
+        <input id="menu-toggle" type="checkbox" class="peer sr-only" />
+        <a href="index.html" class="text-[clamp(1.9rem,5vw,2.2rem)] leading-none md:hidden">zomeren.studio</a>
+        <label
+          for="menu-toggle"
+          aria-label="Toggle menu"
+          class="relative z-50 flex h-10 w-10 cursor-pointer items-center justify-center md:hidden
+          before:absolute before:left-1/2 before:top-1/2 before:block before:h-px before:w-6 before:-translate-x-1/2 before:-translate-y-[4px]
+          before:bg-current before:transition-transform before:duration-300 before:ease-in-out before:content-['']
+          after:absolute after:left-1/2 after:top-1/2 after:block after:h-px after:w-6 after:-translate-x-1/2 after:translate-y-[4px]
+          after:bg-current after:transition-transform after:duration-300 after:ease-in-out after:content-['']
+          peer-checked:before:translate-y-0 peer-checked:before:rotate-45
+          peer-checked:after:translate-y-0 peer-checked:after:-rotate-45"
+        ></label>
+
+        <nav aria-label="Primary" class="hidden w-full grid-cols-5 items-center text-[clamp(1.95rem,1.95vw,3.4rem)] leading-none tracking-[-0.016em] md:grid">
+          <a href="design.html" class="justify-self-start">Design</a>
+          <a href="work.html" class="justify-self-start">Work</a>
+          <a href="index.html" class="justify-self-center">zomeren.studio</a>
+          <a href="about.html" class="justify-self-end">About</a>
+          <div class="justify-self-end flex items-end gap-4">
+            <a href="holism.html">Holism</a>
+            <span class="text-[clamp(1.05rem,1vw,1.35rem)] leading-none tracking-[-0.01em]">
+              <a href="music.html" class="opacity-100">EN</a> / <a href="nl/music.html" class="opacity-75">NL</a>
+            </span>
+          </div>
+        </nav>
+
+        <div class="pointer-events-none fixed inset-0 z-40 h-screen w-screen bg-white px-6 pb-10 pt-28 opacity-0 transition-opacity duration-300 ease-in-out peer-checked:pointer-events-auto peer-checked:opacity-100 dark:bg-black md:hidden">
+          <nav aria-label="Mobile Primary" class="flex flex-col gap-6 text-[clamp(1.3rem,8vw,2.5rem)] leading-[1.05] tracking-[-0.012em] text-black dark:text-white">
+            <a href="design.html">Design</a>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="holism.html">Holism</a>
+            <p class="text-[clamp(1rem,4.8vw,1.5rem)] leading-none tracking-[-0.01em]">
+              <a href="music.html">EN</a> / <a href="nl/music.html" class="opacity-75">NL</a>
+            </p>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="px-6 pb-24 pt-24 md:px-12 md:pb-36 md:pt-28">
+      <section data-reveal class="py-10 md:py-16">
+        <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+          Marco Van Zomeren releases on Spotify.
+        </h1>
+      </section>
+
+      <section data-reveal class="py-10 md:py-14">
+        <p class="max-w-[30ch] text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em] text-black/85 dark:text-white/85">
+          Singles only. Custom player cards styled in line with the site.
+        </p>
+
+        <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-gradient-to-br from-[#0f1a3e] via-[#304b8f] to-[#f0b69e]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">EVI</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2026</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20evi" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-[linear-gradient(145deg,#efefef,#dcdcdc)]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Amethyst</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2022</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20amethyst" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-[linear-gradient(145deg,#f4f4f4,#dddddd)]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Colds</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2021</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20colds" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-[linear-gradient(145deg,#f2f2f2,#d9d9d9)]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Go</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2020</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20go" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-gradient-to-br from-[#f1c2da] via-[#d07da8] to-[#a55d84]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Higher Grounds</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2020</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20higher%20grounds" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-[linear-gradient(145deg,#f2f2f2,#d8d8d8)]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Space Time</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2020</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20space%20time" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-[linear-gradient(145deg,#f8f8f8,#e1e1e1)]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Vivre</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2019</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20vivre" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-[linear-gradient(145deg,#ececec,#d6d6d6)]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Systole</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2019</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20systole" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-[linear-gradient(145deg,#eeeeee,#d4d4d4)]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Misère</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2019</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20misere" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-[linear-gradient(145deg,#ececec,#d7d7d7)]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Avance</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2019</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20avance" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-[linear-gradient(145deg,#f0f0f0,#d8d8d8)]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Strandwandeling</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2018</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20strandwandeling" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-[linear-gradient(145deg,#efefef,#dbdbdb)]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Vloeistof</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2018</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20vloeistof" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+
+          <article class="group border-b border-black/20 pb-8 dark:border-white/20">
+            <div class="relative aspect-square overflow-hidden bg-[radial-gradient(circle_at_65%_35%,#222,#000)]"></div>
+            <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Doorgaan</h2>
+            <div class="mt-2 flex items-center gap-3 text-[clamp(1rem,1.1vw,1.3rem)] text-black/70 dark:text-white/70"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2018</span><span>Single</span></div>
+            <a href="https://open.spotify.com/search/marco%20van%20zomeren%20doorgaan" target="_blank" rel="noreferrer noopener" class="line-reveal-inline mt-4 inline-flex pb-1 text-[clamp(1rem,1.1vw,1.25rem)]">Play on Spotify</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white px-6 pt-24 text-black dark:bg-black dark:text-white md:px-12 md:pt-28">
+      <div class="grid grid-cols-2 gap-x-10 gap-y-12 md:grid-cols-4 md:gap-x-14">
+        <div>
+          <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Design</h3>
+          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
+            <li><a href="branding.html" class="line-reveal-hover">Branding</a></li>
+            <li><a href="motion.html" class="line-reveal-hover">Motion</a></li>
+            <li><a href="ui-ux.html" class="line-reveal-hover">UI/UX</a></li>
+            <li><a href="ai.html" class="line-reveal-hover">AI</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Work</h3>
+          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
+            <li><a href="contact.html" class="line-reveal-hover">Together</a></li>
+            <li><a href="work.html" class="line-reveal-hover">Portfolio</a></li>
+            <li><a href="music.html" class="line-reveal-hover">Music</a></li>
+            <li>LAB (coming soon)</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">About</h3>
+          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
+            <li><a href="about.html" class="line-reveal-hover">The Studio</a></li>
+            <li><a href="about.html" class="line-reveal-hover">Method</a></li>
+            <li>Shop (coming soon)</li>
+            <li><a href="about.html" class="line-reveal-hover">DOA</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Holism</h3>
+          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
+            <li><a href="holism.html" class="line-reveal-hover">Holism Design</a></li>
+            <li><a href="astrology.html" class="line-reveal-hover">Astrology</a></li>
+            <li><a href="human.html" class="line-reveal-hover">Human</a></li>
+            <li><a href="rythm.html" class="line-reveal-hover">Rythm</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-20 overflow-hidden">
+        <div class="footer-logo-svg text-black dark:text-white" data-svg-src="assets/svg/studio.svg" aria-hidden="true"><img src="assets/svg/studio.svg" alt="" class="h-auto w-full invert dark:invert-0" /></div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
