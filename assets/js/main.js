@@ -5,6 +5,97 @@
   if (!hasGSAP || !hasScrollTrigger) return;
 
   gsap.registerPlugin(ScrollTrigger);
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function isSamePageHashLink(url) {
+    return url.pathname === window.location.pathname && url.search === window.location.search && !!url.hash;
+  }
+
+  function canAnimateNavigation(link) {
+    if (!link) return false;
+    if (!link.href) return false;
+    if (link.target && link.target !== "_self") return false;
+    if (link.hasAttribute("download")) return false;
+
+    var rel = (link.getAttribute("rel") || "").toLowerCase();
+    if (rel.indexOf("external") !== -1) return false;
+
+    var url;
+    try {
+      url = new URL(link.href, window.location.href);
+    } catch (_err) {
+      return false;
+    }
+
+    if (url.origin !== window.location.origin) return false;
+    if (isSamePageHashLink(url)) return false;
+    return true;
+  }
+
+  function runPageEnterTransition() {
+    if (prefersReducedMotion) return;
+    var enterTargets = [];
+    var main = document.querySelector("main");
+    var footer = document.querySelector("footer");
+    if (main) enterTargets.push(main);
+    if (footer) enterTargets.push(footer);
+    if (!enterTargets.length) return;
+
+    gsap.set(enterTargets, { autoAlpha: 0, y: 10 });
+    gsap.to(enterTargets, {
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.42,
+      ease: "power2.out",
+      clearProps: "opacity,transform,visibility"
+    });
+  }
+
+  function runPageExitTransition(destination) {
+    if (prefersReducedMotion) {
+      window.location.href = destination;
+      return;
+    }
+
+    var exitTargets = [];
+    var main = document.querySelector("main");
+    var footer = document.querySelector("footer");
+    if (main) exitTargets.push(main);
+    if (footer) exitTargets.push(footer);
+    if (!exitTargets.length) {
+      window.location.href = destination;
+      return;
+    }
+
+    document.body.classList.add("page-leaving");
+    gsap.to(exitTargets, {
+      autoAlpha: 0,
+      y: 12,
+      duration: 0.32,
+      ease: "power2.inOut",
+      onComplete: function () {
+        window.location.href = destination;
+      }
+    });
+  }
+
+  document.addEventListener("click", function (event) {
+    if (event.defaultPrevented) return;
+    if (event.button !== 0) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    var link = event.target.closest("a");
+    if (!canAnimateNavigation(link)) return;
+
+    event.preventDefault();
+    runPageExitTransition(link.href);
+  });
+
+  window.addEventListener("pageshow", function () {
+    document.body.classList.remove("page-leaving");
+  });
+
+  runPageEnterTransition();
 
   function splitHeadingWords(heading) {
     if (heading.dataset.splitDone === "1") return [];
@@ -150,7 +241,6 @@
   }
 
   var parallaxItems = gsap.utils.toArray("[data-speed]");
-  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (!prefersReducedMotion) {
     parallaxItems.forEach(function (item) {
