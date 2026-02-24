@@ -249,6 +249,54 @@
         }
       });
     }
+
+    var musicSlider = document.querySelector(".music-swiper");
+    if (musicSlider) {
+      new Swiper(musicSlider, {
+        effect: "coverflow",
+        centeredSlides: true,
+        grabCursor: true,
+        loop: false,
+        speed: 700,
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        coverflowEffect: {
+          rotate: 24,
+          stretch: 0,
+          depth: 260,
+          modifier: 1.05,
+          slideShadows: false
+        },
+        navigation: {
+          nextEl: ".music-next",
+          prevEl: ".music-prev"
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 1.8,
+            spaceBetween: 28,
+            coverflowEffect: {
+              rotate: 28,
+              stretch: 0,
+              depth: 300,
+              modifier: 1.1,
+              slideShadows: false
+            }
+          },
+          1200: {
+            slidesPerView: 2.6,
+            spaceBetween: 30,
+            coverflowEffect: {
+              rotate: 32,
+              stretch: 0,
+              depth: 360,
+              modifier: 1.2,
+              slideShadows: false
+            }
+          }
+        }
+      });
+    }
   }
 
   var menuToggle = document.getElementById("menu-toggle");
