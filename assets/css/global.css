@@ -8,6 +8,42 @@ body {
   font-family: area-normal, sans-serif;
 }
 
+header.fixed.inset-x-0.top-0 {
+  transition: opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.is-loading header.fixed.inset-x-0.top-0,
+html.is-transitioning header.fixed.inset-x-0.top-0 {
+  opacity: 0;
+  mix-blend-mode: normal !important;
+}
+
+html:not(.is-loading):not(.is-transitioning) header.fixed.inset-x-0.top-0 {
+  opacity: 1;
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  background: #ffffff;
+  transition: opacity 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  html::before {
+    background: #000000;
+  }
+}
+
+html.is-loading::before,
+html.is-transitioning::before {
+  opacity: 1;
+}
+
 @media (max-width: 767px) {
   header.fixed.inset-x-0.top-0 {
     mix-blend-mode: difference;
@@ -33,52 +69,6 @@ h1 {
 
 .project-page h1 {
   text-indent: 0;
-}
-
-@view-transition {
-  navigation: auto;
-}
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: 0.45s;
-  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-::view-transition-old(root) {
-  animation-name: page-fade-out;
-}
-
-::view-transition-new(root) {
-  animation-name: page-fade-in;
-}
-
-@keyframes page-fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes page-fade-out {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 0.01ms;
-  }
 }
 
 .line-reveal-link {
@@ -357,15 +347,20 @@ h1 {
   text-indent: 0 !important;
 }
 
-.fade-in-stagger .word {
+html.has-gsap .fade-in-stagger .word {
   display: inline-block;
-  opacity: 0;
+  opacity: 1;
   transform: none;
   text-indent: 0 !important;
 }
 
 .fade-in-stagger span {
   text-indent: 0 !important;
+}
+
+html.js.is-loading [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
 }
 
 @media (prefers-color-scheme: dark) {

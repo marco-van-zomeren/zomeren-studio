@@ -1,11 +1,96 @@
 (function () {
+  var rootEl = document.documentElement;
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var isNavigating = false;
+
+  function markPageReady() {
+    if (!rootEl) return;
+    rootEl.classList.remove("is-loading");
+    rootEl.classList.remove("is-transitioning");
+  }
+
+  function queuePageReady() {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(markPageReady);
+    });
+  }
+
+  function shouldHandleNavigation(anchor, targetUrl) {
+    if (!anchor || !targetUrl) return false;
+    if (anchor.hasAttribute("download")) return false;
+    if (anchor.getAttribute("target") && anchor.getAttribute("target") !== "_self") return false;
+    if (anchor.getAttribute("rel") === "external") return false;
+    if (targetUrl.origin !== window.location.origin) return false;
+
+    var protocol = targetUrl.protocol.toLowerCase();
+    if (protocol !== "http:" && protocol !== "https:") return false;
+
+    // Ignore same-page hash jumps.
+    var samePath = targetUrl.pathname === window.location.pathname;
+    var sameSearch = targetUrl.search === window.location.search;
+    if (samePath && sameSearch && targetUrl.hash) return false;
+
+    return true;
+  }
+
+  function setupPageTransitions() {
+    document.addEventListener(
+      "click",
+      function (event) {
+        if (isNavigating) return;
+        if (event.defaultPrevented) return;
+        if (event.button !== 0) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+        var anchor = event.target && event.target.closest ? event.target.closest("a[href]") : null;
+        if (!anchor) return;
+
+        var targetUrl;
+        try {
+          targetUrl = new URL(anchor.href, window.location.href);
+        } catch (_err) {
+          return;
+        }
+
+        if (!shouldHandleNavigation(anchor, targetUrl)) return;
+
+        event.preventDefault();
+        isNavigating = true;
+        if (rootEl) rootEl.classList.add("is-transitioning");
+
+        var delay = prefersReducedMotion ? 0 : 170;
+        window.setTimeout(function () {
+          window.location.assign(targetUrl.href);
+        }, delay);
+      },
+      true
+    );
+
+    window.addEventListener("pageshow", function () {
+      isNavigating = false;
+      markPageReady();
+    });
+  }
+
+  setupPageTransitions();
+
   var hasGSAP = typeof window.gsap !== "undefined";
   var hasScrollTrigger = typeof window.ScrollTrigger !== "undefined";
 
-  if (!hasGSAP || !hasScrollTrigger) return;
+  if (rootEl) {
+    rootEl.classList.toggle("has-gsap", !!(hasGSAP && hasScrollTrigger));
+  }
+
+  if (!hasGSAP || !hasScrollTrigger) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", queuePageReady, { once: true });
+    } else {
+      queuePageReady();
+    }
+    return;
+  }
 
   gsap.registerPlugin(ScrollTrigger);
-  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function splitHeadingWords(heading) {
     if (heading.dataset.splitDone === "1") return [];
@@ -96,20 +181,28 @@
     var parts = splitHeadingWords(heading);
     if (!parts.length) return;
 
-    gsap.set(parts, { autoAlpha: 0, yPercent: 120 });
+    if (prefersReducedMotion) {
+      gsap.set(parts, { autoAlpha: 1, yPercent: 0 });
+      heading.dataset.revealDone = "1";
+      return;
+    }
 
-    gsap.to(parts, {
-      autoAlpha: 1,
-      yPercent: 0,
-      duration: 0.85,
-      ease: "power3.out",
-      stagger: 0.06,
-      scrollTrigger: {
-        trigger: heading,
-        start: "top 86%",
-        once: true
+    gsap.fromTo(
+      parts,
+      { autoAlpha: 0, yPercent: 120 },
+      {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.85,
+        ease: "power3.out",
+        stagger: 0.06,
+        overwrite: true,
+        delay: 0.05,
+        onComplete: function () {
+          heading.dataset.revealDone = "1";
+        }
       }
-    });
+    );
   });
 
   var revealItems = gsap
@@ -136,6 +229,12 @@
       }
     );
   });
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(queuePageReady);
+  } else {
+    queuePageReady();
+  }
 
   var isProjectPage = window.location.pathname.indexOf("/projects/") !== -1;
   if (isProjectPage) {
