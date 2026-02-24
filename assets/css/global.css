@@ -8,10 +8,6 @@ body {
   font-family: area-normal, sans-serif;
 }
 
-body.page-leaving {
-  pointer-events: none;
-}
-
 @media (max-width: 767px) {
   header.fixed.inset-x-0.top-0 {
     mix-blend-mode: difference;
