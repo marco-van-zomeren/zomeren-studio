@@ -1,223 +1,257 @@
 <!doctype html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <script>document.documentElement.classList.add('js','is-loading');(function(){var done=false;function unlock(){if(done)return;done=true;document.documentElement.classList.remove('is-loading');}document.addEventListener('DOMContentLoaded',function(){requestAnimationFrame(unlock);},{once:true});window.addEventListener('pageshow',unlock,{once:true});window.addEventListener('load',unlock,{once:true});setTimeout(unlock,1200);}());</script>
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
-    <title>Branergy Methodee - zomeren.studio</title>
-    <link href="../dist/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0" />
-    <link rel="stylesheet" href="../assets/css/global.css" />
-  </head>
-  <body class="bg-white dark:bg-black text-black dark:text-white antialiased">
-    <header class="fixed inset-x-0 top-0 z-[70] px-6 py-7 text-black dark:text-white md:text-white md:mix-blend-difference md:px-12 md:py-8">
-      <div class="relative flex w-full items-center justify-between">
-        <input id="menu-toggle" type="checkbox" class="peer sr-only" />
-        <a href="index.html" class="text-[clamp(1.9rem,5vw,2.2rem)] leading-none md:hidden">zomeren.studio</a>
-        <label
-          for="menu-toggle"
-          aria-label="Toggle menu"
-          class="relative z-50 flex h-10 w-10 cursor-pointer items-center justify-center md:hidden
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script>document.documentElement.classList.add('js', 'is-loading'); (function () { var done = false; function unlock() { if (done) return; done = true; document.documentElement.classList.remove('is-loading'); } document.addEventListener('DOMContentLoaded', function () { requestAnimationFrame(unlock); }, { once: true }); window.addEventListener('pageshow', unlock, { once: true }); window.addEventListener('load', unlock, { once: true }); setTimeout(unlock, 1200); }());</script>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+  <title>Branergy Methodee - zomeren.studio</title>
+  <link href="../dist/output.css" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0" />
+  <link rel="stylesheet" href="../assets/css/global.css" />
+</head>
+
+<body class="bg-white dark:bg-black text-black dark:text-white antialiased">
+  <header
+    class="fixed inset-x-0 top-0 z-[70] px-6 py-7 text-black dark:text-white md:text-white md:mix-blend-difference md:px-12 md:py-8">
+    <div class="relative flex w-full items-center justify-between">
+      <input id="menu-toggle" type="checkbox" class="peer sr-only" />
+      <a href="index.html" class="text-[clamp(1.9rem,5vw,2.2rem)] leading-none md:hidden">zomeren.studio</a>
+      <label for="menu-toggle" aria-label="Toggle menu" class="relative z-50 flex h-10 w-10 cursor-pointer items-center justify-center md:hidden
           before:content-[''] before:absolute before:left-1/2 before:top-1/2 before:block before:h-px before:w-6 before:-translate-x-1/2 before:-translate-y-[4px]
           before:bg-current before:transition-transform before:duration-300 before:ease-in-out
           after:content-[''] after:absolute after:left-1/2 after:top-1/2 after:block after:h-px after:w-6 after:-translate-x-1/2 after:translate-y-[4px]
           after:bg-current after:transition-transform after:duration-300 after:ease-in-out
           peer-checked:before:translate-y-0 peer-checked:before:rotate-45
-          peer-checked:after:translate-y-0 peer-checked:after:-rotate-45"
-        ></label>
+          peer-checked:after:translate-y-0 peer-checked:after:-rotate-45"></label>
 
-        <nav aria-label="Primary" class="hidden w-full grid-cols-5 items-center text-[clamp(1.95rem,1.95vw,3.4rem)] leading-none tracking-[-0.016em] md:grid">
-          <a href="design.html" class="justify-self-start">Ontwerp</a>
-          <a href="work.html" class="justify-self-start">Werk</a>
-          <a href="index.html" class="justify-self-center">zomeren.studio</a>
-          <a href="about.html" class="justify-self-end">Over</a>
-          <div class="justify-self-end flex items-end gap-4">
-            <a href="holism.html">Holisme</a>
-            <span class="text-[clamp(1.05rem,1vw,1.35rem)] leading-none tracking-[-0.01em]">
-              <a href="../branergy-method.html" class="opacity-75">EN</a> / <a href="branergy-methode.html" class="opacity-100">NL</a>
-            </span>
-          </div>
+      <nav aria-label="Primary"
+        class="hidden w-full grid-cols-5 items-center text-[clamp(1.95rem,1.95vw,3.4rem)] leading-none tracking-[-0.016em] md:grid">
+        <a href="design.html" class="justify-self-start">Ontwerp</a>
+        <a href="work.html" class="justify-self-start">Werk</a>
+        <a href="index.html" class="justify-self-center">zomeren.studio</a>
+        <a href="about.html" class="justify-self-end">Over</a>
+        <div class="justify-self-end flex items-end gap-4">
+          <a href="holism.html">Holisme</a>
+          <span class="text-[clamp(1.05rem,1vw,1.35rem)] leading-none tracking-[-0.01em]">
+            <a href="../branergy-method.html" class="opacity-75">EN</a> / <a href="branergy-methode.html"
+              class="opacity-100">NL</a>
+          </span>
+        </div>
+      </nav>
+
+      <div
+        class="pointer-events-none fixed inset-0 z-40 h-screen w-screen bg-white dark:bg-black px-6 pb-10 pt-28 opacity-0 transition-opacity duration-300 ease-in-out peer-checked:pointer-events-auto peer-checked:opacity-100 md:hidden">
+        <nav aria-label="Mobile Primary"
+          class="flex flex-col gap-6 text-[clamp(1.3rem,8vw,2.5rem)] leading-[1.05] tracking-[-0.012em] text-black dark:text-white">
+          <a href="design.html">Ontwerp</a>
+          <a href="work.html">Werk</a>
+          <a href="about.html">Over</a>
+          <a href="holism.html">Holisme</a>
+          <p class="text-[clamp(1rem,4.8vw,1.5rem)] leading-none tracking-[-0.01em]">
+            <a href="../branergy-method.html" class="opacity-75">EN</a> / <a href="branergy-methode.html">NL</a>
+          </p>
         </nav>
+      </div>
+    </div>
+  </header>
 
-        <div class="pointer-events-none fixed inset-0 z-40 h-screen w-screen bg-white dark:bg-black px-6 pb-10 pt-28 opacity-0 transition-opacity duration-300 ease-in-out peer-checked:pointer-events-auto peer-checked:opacity-100 md:hidden">
-          <nav aria-label="Mobile Primary" class="flex flex-col gap-6 text-[clamp(1.3rem,8vw,2.5rem)] leading-[1.05] tracking-[-0.012em] text-black dark:text-white">
-            <a href="design.html">Ontwerp</a>
-            <a href="work.html">Werk</a>
-            <a href="about.html">Over</a>
-            <a href="holism.html">Holisme</a>
-            <p class="text-[clamp(1rem,4.8vw,1.5rem)] leading-none tracking-[-0.01em]">
-              <a href="../branergy-method.html" class="opacity-75">EN</a> / <a href="branergy-methode.html">NL</a>
-            </p>
-          </nav>
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        Branergy<span style="font-size:0.6em; vertical-align:super;">&copy;</span> is een holistische methode die merken
+        helpt hun ware potentieel te ontdekken en volledig tot uitdrukking te brengen.
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img src="../assets/images/marco/marco_van_zomeren_studio_4.webp" alt="Portret van Marco van Zomeren"
+            class="aspect-[2/3] w-full object-cover" loading="eager" decoding="async" />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]">
+            Het is een aanpak die begint bij de mens achter het merk en alles bekijkt door de lens van astrologie: de
+            archetypes aarde, vuur, lucht en water. Vanuit die inzichten vertalen we naar identiteitssystemen die van
+            nature kloppen.
+          </p>
+          <p class="mt-6 text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]">
+            De Branergy Methodee volgt de natuurlijke synergie tussen de vier astrologische elementen aarde, water,
+            lucht en vuur en gebruikt die als thematische richting voor de vier fases van een Branergy-reis. Elk element
+            vertegenwoordigt een unieke energie die samen het complete merkverhaal vormt, van fundament tot expressie.
+          </p>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
-      <section data-reveal class="py-10 md:py-16">
-        <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
-          Branergy<span style="font-size:0.6em; vertical-align:super;">&copy;</span> is een holistische methode die merken helpt hun ware potentieel te ontdekken en volledig tot uitdrukking te brengen.
-        </h1>
-      </section>
-
-      <section data-reveal class="py-10 md:py-14">
-        <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
-          <div class="col-span-4 lg:col-span-3">
-            <img
-              src="../assets/images/marco/marco_van_zomeren_studio_4.webp"
-              alt="Portret van Marco van Zomeren"
-              class="aspect-[2/3] w-full object-cover"
-              loading="eager"
-              decoding="async"
-            />
+    <section data-reveal class="py-8 md:py-12">
+      <div class="space-y-12 md:space-y-16">
+        <article
+          class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="../assets/svg/earth.svg" alt="" class="h-20 w-20 object-contain brightness-0 dark:invert"
+              aria-hidden="true" />
           </div>
-
-          <div class="hidden lg:block lg:col-span-3"></div>
-
-          <div class="col-span-4 lg:col-span-6">
-            <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]">
-              Het is een aanpak die begint bij de mens achter het merk en alles bekijkt door de lens van astrologie: de archetypes aarde, vuur, lucht en water. Vanuit die inzichten vertalen we naar identiteitssystemen die van nature kloppen.
-            </p>
-            <p class="mt-6 text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]">
-              De Branergy Methodee volgt de natuurlijke synergie tussen de vier astrologische elementen aarde, water, lucht en vuur en gebruikt die als thematische richting voor de vier fases van een Branergy-reis. Elk element vertegenwoordigt een unieke energie die samen het complete merkverhaal vormt, van fundament tot expressie.
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">1 Aarde</h2>
+            <p class="mt-3 text-[clamp(1.3rem,1.9vw,2.5rem)] leading-[1.2] tracking-[-0.01em]">Stabiliteit, structuur en
+              realisatie</p>
+            <p
+              class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Een sterk merk begint met een solide basis. In deze fase onderzoeken we wie je bent, waar je voor staat en
+              wat je onderscheidt. We leggen de basis voor groei door de essentie van het merk te verankeren in heldere
+              waarden en richting.
             </p>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <section data-reveal class="py-8 md:py-12">
-        <div class="space-y-12 md:space-y-16">
-          <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
-            <div class="col-span-1 lg:col-span-2">
-              <img src="../assets/svg/earth.svg" alt="" class="h-20 w-20 object-contain brightness-0 invert" aria-hidden="true" />
-            </div>
-            <div class="col-span-3 lg:col-span-8">
-              <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">1 Aarde</h2>
-              <p class="mt-3 text-[clamp(1.3rem,1.9vw,2.5rem)] leading-[1.2] tracking-[-0.01em]">Stabiliteit, structuur en realisatie</p>
-              <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
-                Een sterk merk begint met een solide basis. In deze fase onderzoeken we wie je bent, waar je voor staat en wat je onderscheidt. We leggen de basis voor groei door de essentie van het merk te verankeren in heldere waarden en richting.
-              </p>
-            </div>
-          </article>
+        <article
+          class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="../assets/svg/water.svg" alt="" class="h-20 w-20 object-contain brightness-0 dark:invert"
+              aria-hidden="true" />
+          </div>
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">2 Water</h2>
+            <p class="mt-3 text-[clamp(1.3rem,1.9vw,2.5rem)] leading-[1.2] tracking-[-0.01em]">Emotie, intuïtie en
+              verbinding</p>
+            <p
+              class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Vanuit die basis creëren we beweging. In de waterfase vertalen we inzichten naar een merkstrategie die de
+              levenslijn van het merk wordt en alle zintuigen verbindt: van onderbuikgevoel tot intellect, menselijk en
+              intuïtief. We bouwen een verhaal dat resoneert met klanten en het merk natuurlijk laat stromen tussen mens
+              en markt.
+            </p>
+          </div>
+        </article>
 
-          <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
-            <div class="col-span-1 lg:col-span-2">
-              <img src="../assets/svg/water.svg" alt="" class="h-20 w-20 object-contain brightness-0 invert" aria-hidden="true" />
-            </div>
-            <div class="col-span-3 lg:col-span-8">
-              <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">2 Water</h2>
-              <p class="mt-3 text-[clamp(1.3rem,1.9vw,2.5rem)] leading-[1.2] tracking-[-0.01em]">Emotie, intuïtie en verbinding</p>
-              <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
-                Vanuit die basis creëren we beweging. In de waterfase vertalen we inzichten naar een merkstrategie die de levenslijn van het merk wordt en alle zintuigen verbindt: van onderbuikgevoel tot intellect, menselijk en intuïtief. We bouwen een verhaal dat resoneert met klanten en het merk natuurlijk laat stromen tussen mens en markt.
-              </p>
-            </div>
-          </article>
+        <article
+          class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="../assets/svg/air.svg" alt="" class="h-20 w-20 object-contain brightness-0 dark:invert"
+              aria-hidden="true" />
+          </div>
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">3 Lucht</h2>
+            <p class="mt-3 text-[clamp(1.3rem,1.9vw,2.5rem)] leading-[1.2] tracking-[-0.01em]">Denken, communicatie en
+              concept</p>
+            <p
+              class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Lucht staat voor helderheid en perspectief. Hier scherpen we de visie aan en vertalen die naar een
+              krachtige manier van communiceren. We bepalen de tone of voice, vormen de merkboodschap en zorgen dat je
+              verhaal moeiteloos door elke uiting beweegt.
+            </p>
+          </div>
+        </article>
 
-          <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
-            <div class="col-span-1 lg:col-span-2">
-              <img src="../assets/svg/air.svg" alt="" class="h-20 w-20 object-contain brightness-0 invert" aria-hidden="true" />
-            </div>
-            <div class="col-span-3 lg:col-span-8">
-              <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">3 Lucht</h2>
-              <p class="mt-3 text-[clamp(1.3rem,1.9vw,2.5rem)] leading-[1.2] tracking-[-0.01em]">Denken, communicatie en concept</p>
-              <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
-                Lucht staat voor helderheid en perspectief. Hier scherpen we de visie aan en vertalen die naar een krachtige manier van communiceren. We bepalen de tone of voice, vormen de merkboodschap en zorgen dat je verhaal moeiteloos door elke uiting beweegt.
-              </p>
-            </div>
-          </article>
-
-          <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
-            <div class="col-span-1 lg:col-span-2">
-              <img src="../assets/svg/fire.svg" alt="" class="h-20 w-20 object-contain brightness-0 invert" aria-hidden="true" />
-            </div>
-            <div class="col-span-3 lg:col-span-8">
-              <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">4 Vuur</h2>
-              <p class="mt-3 text-[clamp(1.3rem,1.9vw,2.5rem)] leading-[1.2] tracking-[-0.01em]">Actie, creatie en inspiratie</p>
-              <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
-                Hier komt alles samen. De strategie krijgt vorm en het verhaal krijgt een gezicht. We vertalen de energie van het merk naar design: visueel, tastbaar en vol karakter. Dit is waar het merk in zijn kracht komt te staan en zijn ware potentieel gaat belichamen en uitdragen.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section data-reveal class="py-24 md:py-32">
-        <div data-parallax-wrap class="relative pb-12 md:pb-16">
-          <p class="text-left text-[clamp(2.6rem,11vw,12rem)] leading-[0.9] tracking-[-0.03em] font-[700]">Now let&rsquo;s get</p>
-          <p class="text-right text-[clamp(2.6rem,11vw,12rem)] leading-[0.9] tracking-[-0.03em] font-[700]">some shit</p>
-
-          <figure
-            data-speed="-150"
-            class="relative z-20 mt-2 w-[58vw] max-w-[24rem] will-change-transform md:absolute md:left-0 md:top-[33%] md:mt-0 md:w-[28vw] md:max-w-none"
-          >
-            <img
-              src="../assets/images/projects/ultimo/1-ultimo-design-by-wadm.webp"
-              alt="Ultimo project visual"
-              class="aspect-[4/3] w-full object-cover"
-            />
-          </figure>
-
-          <p class="text-left text-[clamp(2.6rem,11vw,12rem)] leading-[0.9] tracking-[-0.03em] font-[700]">done today</p>
-        </div>
-
-        <a href="../contact.html" class="line-reveal-inline w-fit pb-1 text-[clamp(2rem,3.6vw,4.3rem)] tracking-[-0.02em]">
-                <span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Laten we werken
-        </a>
-      </section>
-    </main>
-
-    <footer class="bg-white dark:bg-black px-6 pt-24 text-black dark:text-white md:px-12 md:pt-28">
-      <div class="grid grid-cols-2 gap-x-10 gap-y-12 md:grid-cols-4 md:gap-x-14">
-        <div>
-          <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Ontwerp</h3>
-          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
-            <li><a href="branding.html">Branding</a></li>
-            <li><a href="motion.html">Motion</a></li>
-            <li><a href="ui-ux.html">UI/UX</a></li>
-            <li><a href="ai.html">AI</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Werk</h3>
-          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
-            <li><a href="contact.html">Samen</a></li>
-            <li><a href="work.html">Portfolio</a></li>
-            <li><a href="music.html" class="line-reveal-hover">Muziek</a></li>
-            <li>LAB (binnenkort)</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Over</h3>
-          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
-            <li><a href="about.html">De Studio</a></li>
-            <li><a href="branergy-methode.html">Methode</a></li>
-            <li>Shop (binnenkort)</li>
-            <li><a href="doa.html">DOA</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Holisme</h3>
-          <ul class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
-            <li><a href="holism.html">Holism Design</a></li>
-            <li><a href="astrology.html">Astrologie</a></li>
-            <li><a href="human.html" class="line-reveal-hover">Mens</a></li>
-            <li><a href="rythm.html" class="line-reveal-hover">Ritme</a></li>
-          </ul>
-        </div>
+        <article
+          class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="../assets/svg/fire.svg" alt="" class="h-20 w-20 object-contain brightness-0 dark:invert"
+              aria-hidden="true" />
+          </div>
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">4 Vuur</h2>
+            <p class="mt-3 text-[clamp(1.3rem,1.9vw,2.5rem)] leading-[1.2] tracking-[-0.01em]">Actie, creatie en
+              inspiratie</p>
+            <p
+              class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Hier komt alles samen. De strategie krijgt vorm en het verhaal krijgt een gezicht. We vertalen de energie
+              van het merk naar design: visueel, tastbaar en vol karakter. Dit is waar het merk in zijn kracht komt te
+              staan en zijn ware potentieel gaat belichamen en uitdragen.
+            </p>
+          </div>
+        </article>
       </div>
-      <div class="mt-20 overflow-hidden">
-        <div class="footer-logo-svg text-black dark:text-white" data-svg-src="../assets/svg/studio.svg" aria-hidden="true"><img src="../assets/svg/studio.svg" alt="" class="w-full h-auto invert dark:invert-0" /></div>
-      </div>
-    </footer>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-  </body>
+    <section data-reveal class="py-24 md:py-32">
+      <div data-parallax-wrap class="relative pb-12 md:pb-16">
+        <p class="text-left text-[clamp(2.6rem,11vw,12rem)] leading-[0.9] tracking-[-0.03em] font-[700]">Now let&rsquo;s
+          get</p>
+        <p class="text-right text-[clamp(2.6rem,11vw,12rem)] leading-[0.9] tracking-[-0.03em] font-[700]">some shit</p>
+
+        <figure data-speed="-150"
+          class="relative z-20 mt-2 w-[58vw] max-w-[24rem] will-change-transform md:absolute md:left-0 md:top-[33%] md:mt-0 md:w-[28vw] md:max-w-none">
+          <img src="../assets/images/projects/ultimo/1-ultimo-design-by-wadm.webp" alt="Ultimo project visual"
+            class="aspect-[4/3] w-full object-cover" />
+        </figure>
+
+        <p class="text-left text-[clamp(2.6rem,11vw,12rem)] leading-[0.9] tracking-[-0.03em] font-[700]">done today</p>
+      </div>
+
+      <a href="../contact.html"
+        class="line-reveal-inline w-fit pb-1 text-[clamp(2rem,3.6vw,4.3rem)] tracking-[-0.02em]">
+        <span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Laten we
+        werken
+      </a>
+    </section>
+  </main>
+
+  <footer class="bg-white dark:bg-black px-6 pt-24 text-black dark:text-white md:px-12 md:pt-28">
+    <div class="grid grid-cols-2 gap-x-10 gap-y-12 md:grid-cols-4 md:gap-x-14">
+      <div>
+        <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Ontwerp</h3>
+        <ul
+          class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
+          <li><a href="branding.html">Branding</a></li>
+          <li><a href="motion.html">Motion</a></li>
+          <li><a href="ui-ux.html">UI/UX</a></li>
+          <li><a href="ai.html">AI</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Werk</h3>
+        <ul
+          class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
+          <li><a href="contact.html">Samen</a></li>
+          <li><a href="work.html">Portfolio</a></li>
+          <li><a href="music.html" class="line-reveal-hover">Muziek</a></li>
+          <li>LAB (binnenkort)</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Over</h3>
+        <ul
+          class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
+          <li><a href="about.html">De Studio</a></li>
+          <li><a href="branergy-methode.html">Methode</a></li>
+          <li>Shop (binnenkort)</li>
+          <li><a href="doa.html">DOA</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-[clamp(1.9rem,1.95vw,3.2rem)] leading-none tracking-[-0.016em]">Holisme</h3>
+        <ul
+          class="mt-6 space-y-4 text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.1] tracking-[-0.012em] text-black/92 dark:text-white/92">
+          <li><a href="holism.html">Holism Design</a></li>
+          <li><a href="astrology.html">Astrologie</a></li>
+          <li><a href="human.html" class="line-reveal-hover">Mens</a></li>
+          <li><a href="rythm.html" class="line-reveal-hover">Ritme</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-20 overflow-hidden">
+      <div class="footer-logo-svg text-black dark:text-white" data-svg-src="../assets/svg/studio.svg"
+        aria-hidden="true"><img src="../assets/svg/studio.svg" alt="" class="w-full h-auto invert dark:invert-0" />
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+
 </html>
