@@ -261,6 +261,12 @@ h1 {
   transition: opacity 0.45s ease;
 }
 
+@media (prefers-color-scheme: light) {
+  .music-release-card::after {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.2) 55%, rgba(255, 255, 255, 0.06) 100%);
+  }
+}
+
 .music-swiper .swiper-slide:not(.swiper-slide-active) .music-release-card::after {
   opacity: 1;
 }
