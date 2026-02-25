@@ -332,6 +332,8 @@
         spaceBetween: 18,
         slidesPerView: 1.12,
         watchOverflow: true,
+        slidesOffsetBefore: 24,
+        slidesOffsetAfter: 24,
         navigation: {
           nextEl: ".reviews-next",
           prevEl: ".reviews-prev"
@@ -339,11 +341,15 @@
         breakpoints: {
           768: {
             slidesPerView: 2.02,
-            spaceBetween: 20
+            spaceBetween: 20,
+            slidesOffsetBefore: 48,
+            slidesOffsetAfter: 48
           },
           1200: {
             slidesPerView: 3.02,
-            spaceBetween: 22
+            spaceBetween: 22,
+            slidesOffsetBefore: 48,
+            slidesOffsetAfter: 48
           }
         }
       });

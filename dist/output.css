@@ -672,6 +672,10 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -1592,6 +1596,10 @@ video {
 
 .text-\[clamp\(4\.16em\2c 4\.16rem\+\(\(1vw-0\.2em\)\*7\.592\)\2c 9em\)\] {
   font-size: clamp(4.16em,4.16rem + ((1vw - 0.2em) * 7.592),9em);
+}
+
+.text-\[clamp\(4\.16em\2c 4\.16rem_\+_\(\(1vw_-_0\.2em\)_\*_7\.592\)\2c 15em\)\] {
+  font-size: clamp(4.16em,4.16rem + ((1vw - 0.2em) * 7.592),15em);
 }
 
 .text-\[clamp\(4\.509em\2c 4\.509rem\+\(\(1vw-0\.2em\)\*8\.613\)\2c 10em\)\] {
