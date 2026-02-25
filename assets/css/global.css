@@ -8,40 +8,25 @@ body {
   font-family: area-normal, sans-serif;
 }
 
-header.fixed.inset-x-0.top-0 {
-  transition: opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+main,
+footer {
+  transition:
+    opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-html.is-loading header.fixed.inset-x-0.top-0,
-html.is-transitioning header.fixed.inset-x-0.top-0 {
+html.is-loading main,
+html.is-loading footer,
+html.is-transitioning main,
+html.is-transitioning footer {
   opacity: 0;
-  mix-blend-mode: normal !important;
+  transform: translateY(10px);
 }
 
-html:not(.is-loading):not(.is-transitioning) header.fixed.inset-x-0.top-0 {
+html:not(.is-loading):not(.is-transitioning) main,
+html:not(.is-loading):not(.is-transitioning) footer {
   opacity: 1;
-}
-
-html::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0;
-  background: #ffffff;
-  transition: opacity 0.26s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@media (prefers-color-scheme: dark) {
-  html::before {
-    background: #000000;
-  }
-}
-
-html.is-loading::before,
-html.is-transitioning::before {
-  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 767px) {
