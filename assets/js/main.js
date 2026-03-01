@@ -527,24 +527,41 @@
       return av - bv;
     });
 
-    gsap.set(paths, { autoAlpha: 0, y: 48 });
+    // Curved baseline at first (outer letters lower), then flatten on scroll.
+    var curveOffsets = [72, 40, 18, 18, 40, 72];
+    var curveRotations = [-7, -3.5, -1, 1, 3.5, 7];
 
-    ScrollTrigger.create({
-      trigger: container,
-      start: "top 88%",
-      once: true,
-      onEnter: function () {
-        gsap.to(paths, {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.9,
-          ease: "power4.out",
-          stagger: 0.18
-        });
-      }
+    gsap.set(paths, {
+      autoAlpha: 1,
+      y: function (i) {
+        return i < curveOffsets.length ? curveOffsets[i] : 0;
+      },
+      rotation: function (i) {
+        return i < curveRotations.length ? curveRotations[i] : 0;
+      },
+      transformOrigin: "50% 100%"
     });
 
-    ScrollTrigger.refresh();
+    function createFooterFlattenScrub() {
+      if (prefersReducedMotion) return;
+
+      gsap.to(paths, {
+        y: 0,
+        rotation: 0,
+        ease: "none",
+        overwrite: "auto",
+        scrollTrigger: {
+          trigger: container,
+          start: "top 90%",
+          end: "bottom bottom",
+          scrub: 1
+        }
+      });
+
+      ScrollTrigger.refresh();
+    }
+
+    createFooterFlattenScrub();
   });
 
   var faqItems = document.querySelectorAll(".faq-item");
