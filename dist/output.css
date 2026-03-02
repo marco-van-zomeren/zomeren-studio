@@ -688,6 +688,10 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -788,6 +792,10 @@ video {
   aspect-ratio: 16 / 9;
 }
 
+.h-0 {
+  height: 0px;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -808,8 +816,8 @@ video {
   height: 11rem;
 }
 
-.h-\[15rem\] {
-  height: 15rem;
+.h-\[5rem\] {
+  height: 5rem;
 }
 
 .h-\[clamp\(5rem\2c 10vw\2c 20rem\)\] {
@@ -1594,12 +1602,12 @@ video {
   font-size: clamp(2rem,5.4vw,5.2rem);
 }
 
-.text-\[clamp\(4\.16em\2c 4\.16rem\+\(\(1vw-0\.2em\)\*7\.592\)\2c 9em\)\] {
-  font-size: clamp(4.16em,4.16rem + ((1vw - 0.2em) * 7.592),9em);
-}
-
 .text-\[clamp\(4\.16em\2c 4\.16rem_\+_\(\(1vw_-_0\.2em\)_\*_7\.592\)\2c 15em\)\] {
   font-size: clamp(4.16em,4.16rem + ((1vw - 0.2em) * 7.592),15em);
+}
+
+.text-\[clamp\(4\.16em\2c 4\.16rem_\+_\(\(1vw_-_0\.2em\)_\*_7\.592\)\2c 9em\)\] {
+  font-size: clamp(4.16em,4.16rem + ((1vw - 0.2em) * 7.592),9em);
 }
 
 .text-\[clamp\(4\.509em\2c 4\.509rem\+\(\(1vw-0\.2em\)\*8\.613\)\2c 10em\)\] {
@@ -2142,8 +2150,16 @@ video {
     display: grid;
   }
 
+  .md\:contents {
+    display: contents;
+  }
+
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-\[15rem\] {
+    height: 15rem;
   }
 
   .md\:w-\[28vw\] {
@@ -2524,6 +2540,10 @@ video {
 
   .dark\:hover\:bg-white\/85:hover {
     background-color: rgb(255 255 255 / 0.85);
+  }
+
+  .dark\:hover\:bg-white\/90:hover {
+    background-color: rgb(255 255 255 / 0.9);
   }
 }
 
