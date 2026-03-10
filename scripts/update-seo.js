@@ -86,6 +86,10 @@ const baseMeta = {
     title: "Rhythm | zomeren.studio",
     description: "Four dimensions of rhythm, one principle: pattern, repetition, tension and release."
   },
+  "website-journey.html": {
+    title: "Website Journey | zomeren.studio",
+    description: "A four-step website journey covering discovery, wireframes, visual design, motion and final handoff."
+  },
   "music.html": {
     title: "Music | zomeren.studio",
     description: "Electronic releases by Marco van Zomeren, from pounding beats to sizzling synths and bombastic basslines.",
@@ -184,6 +188,10 @@ const nlOverrides = {
   "nl/rythm.html": {
     title: "Ritme | zomeren.studio",
     description: "Vier dimensies van ritme, een principe: patroon, herhaling, spanning en ontspanning."
+  },
+  "nl/website-journey.html": {
+    title: "Website Traject | zomeren.studio",
+    description: "Een website-traject in vier fasen: discovery, wireframes, visueel design, motion en uiteindelijke handoff."
   },
   "nl/music.html": {
     title: "Muziek | zomeren.studio",

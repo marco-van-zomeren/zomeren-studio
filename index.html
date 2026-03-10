@@ -4,6 +4,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var stored = window.localStorage.getItem("site-language-preference");
+        if (stored === "en") return;
+
+        var prefersDutch = stored === "nl";
+        if (!prefersDutch) {
+          var languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+          prefersDutch = languages.some(function (lang) {
+            return String(lang || "").toLowerCase().indexOf("nl") === 0;
+          });
+        }
+
+        if (!prefersDutch) return;
+
+        var path = window.location.pathname || "/";
+        var search = window.location.search || "";
+        var hash = window.location.hash || "";
+        var target = null;
+
+        if (path === "/" || path === "") {
+          target = "/nl/";
+        } else if (path === "/index.html") {
+          target = "/nl/index.html";
+        } else if (path === "index.html" || path.endsWith("/index.html")) {
+          target = path.replace(/index\.html$/, "nl/index.html");
+        }
+
+        if (!target) return;
+        window.location.replace(target + search + hash);
+      } catch (_err) {
+        // Keep the English homepage if storage or language detection fails.
+      }
+    })();
+  </script>
 
   <script>document.documentElement.classList.add('js', 'is-loading'); (function () { var done = false; function unlock() { if (done) return; done = true; document.documentElement.classList.remove('is-loading'); } document.addEventListener('DOMContentLoaded', function () { requestAnimationFrame(unlock); }, { once: true }); window.addEventListener('pageshow', unlock, { once: true }); window.addEventListener('load', unlock, { once: true }); setTimeout(unlock, 1200); }());</script>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />

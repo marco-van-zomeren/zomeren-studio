@@ -74,6 +74,28 @@
 
   setupPageTransitions();
 
+  function setupLanguagePreferenceLinks() {
+    var langLinks = Array.prototype.slice.call(document.querySelectorAll("a[href]")).filter(function (link) {
+      var label = (link.textContent || "").trim().toUpperCase();
+      return label === "EN" || label === "NL";
+    });
+
+    if (!langLinks.length) return;
+
+    langLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        var label = (link.textContent || "").trim().toUpperCase();
+        try {
+          window.localStorage.setItem("site-language-preference", label === "NL" ? "nl" : "en");
+        } catch (_err) {
+          // Ignore storage failures, navigation should still work.
+        }
+      });
+    });
+  }
+
+  setupLanguagePreferenceLinks();
+
   var hasGSAP = typeof window.gsap !== "undefined";
   var hasScrollTrigger = typeof window.ScrollTrigger !== "undefined";
 
