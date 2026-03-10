@@ -68,7 +68,7 @@ h1 {
   position: relative;
   display: inline-block;
   text-decoration: none;
-  line-height: 1.25;
+  line-height: 1.75;
 }
 
 .line-reveal-link::before,
