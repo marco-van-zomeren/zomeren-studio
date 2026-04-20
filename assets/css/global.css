@@ -421,6 +421,20 @@ html.js.is-loading [data-reveal] {
   color: #000000;
 }
 
+@media (prefers-color-scheme: light) {
+  [data-zodiac-filters] button:hover {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+  }
+
+  [data-zodiac-filters] button[aria-pressed="true"] {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+  }
+}
+
 [data-zodiac-grid] article[hidden] {
   display: none !important;
 }
