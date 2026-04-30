@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import FooterNL from '../../components/FooterNL.astro';
+import ShitDoneCtaSection from '../../components/ShitDoneCtaSection.astro';
+---
+<BaseLayout
+  title="Mens | zomeren.studio"
+  description="Vier menselijke systemen, een geintegreerd netwerk: structuur, informatie, circulatie en regulatie."
+  lang="nl"
+  enPath="/human/"
+  nlPath="/nl/human/"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"Mens | zomeren.studio","description":"Vier menselijke systemen, een geintegreerd netwerk: structuur, informatie, circulatie en regulatie.","url":"https://zomeren.studio/nl/human/","inLanguage":"nl-NL","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/human/" nlHref="/nl/human/" lang="nl" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        Onder de menselijke huid, zijn vier fundamentele systemen verweven
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img
+            src="/assets/images/human/human-transparent.webp"
+            alt="Visual van menselijke systemen"
+            class="aspect-[2/3] w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]">
+            De mens is geen verzameling onderdelen. De mens is een netwerk. Onder onze huid lopen vier fundamentele systemen door elkaar heen. Een dragende structuur. Een netwerk dat informatie verwerkt. Een stroom die energie transporteert. Een systeem dat beschermt en herstelt. Wat eeuwenlang aarde, lucht, vuur en water werd genoemd, vinden we vandaag terug in ons lichaam, fysiek en functioneel. Vier elementen. Vier netwerken. Een ge&iuml;ntegreerd systeem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section data-reveal class="py-8 md:py-12">
+      <div class="space-y-12 md:space-y-16">
+        <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="/assets/svg/earth-human-skeleton.svg" alt="Aarde - skelet" class="human-element-icon h-[clamp(5rem,10vw,20rem)] w-auto max-h-[20rem] max-w-[20rem] object-contain" loading="lazy" decoding="async" />
+          </div>
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">Skelet</h2>
+            <div class="mt-3">
+              <span class="inline-flex rounded-full border border-black/55 px-6 py-2 text-[clamp(0.9rem,1.05vw,1.2rem)] leading-none tracking-[-0.01em] dark:border-white/55">Aarde</span>
+            </div>
+            <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Aarde is het fundament. Het skelet geeft vorm, bindweefsel en fascia verbinden alles tot een continu netwerk. Zonder deze basis kan geen beweging gecoördineerd plaatsvinden, geen kracht gericht worden. Structuur ondersteunt en begrenst tegelijk. Het maakt vrijheid mogelijk door stabiliteit te bieden.
+            </p>
+          </div>
+        </article>
+
+        <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="/assets/svg/air-human-nervous-system.svg" alt="Lucht - zenuwstelsel" class="human-element-icon h-[clamp(5rem,10vw,20rem)] w-auto max-h-[20rem] max-w-[20rem] object-contain" loading="lazy" decoding="async" />
+          </div>
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">Zenuwstelsel</h2>
+            <div class="mt-3">
+              <span class="inline-flex rounded-full border border-black/55 px-6 py-2 text-[clamp(0.9rem,1.05vw,1.2rem)] leading-none tracking-[-0.01em] dark:border-white/55">Lucht</span>
+            </div>
+            <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Lucht is richting en communicatie. Het centrale en perifere zenuwstelsel verwerken zintuiglijke prikkels, sturen spieren aan en coördineren reflexen. Het is een netwerk van snelle elektrische impulsen en chemische signalen dat bewustzijn, denken en besluitvorming mogelijk maakt. Lucht interpreteert de wereld, vertaalt ervaring naar actie en vormt de brug tussen waarneming en intentie.
+            </p>
+          </div>
+        </article>
+
+        <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="/assets/svg/fire-human-circulatory-system.svg" alt="Vuur - circulatiesysteem" class="human-element-icon h-[clamp(5rem,10vw,20rem)] w-auto max-h-[20rem] max-w-[20rem] object-contain" loading="lazy" decoding="async" />
+          </div>
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">Hart en bloedvaten</h2>
+            <div class="mt-3">
+              <span class="inline-flex rounded-full border border-black/55 px-6 py-2 text-[clamp(0.9rem,1.05vw,1.2rem)] leading-none tracking-[-0.01em] dark:border-white/55">Vuur</span>
+            </div>
+            <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Vuur is beweging en distributie. Het hart en de bloedvaten vormen een circulatiesysteem dat zuurstof en voedingsstoffen naar elke cel brengt. Warmte, energie en ritme stromen door dit netwerk. Vuur activeert, stimuleert en maakt expressie mogelijk. Het zet richting (lucht) om in actie en voedt het hele systeem.
+            </p>
+          </div>
+        </article>
+
+        <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="/assets/svg/water-human-lympathic-system.svg" alt="Water - lymfestelsel" class="human-element-icon h-[clamp(5rem,10vw,20rem)] w-auto max-h-[20rem] max-w-[20rem] object-contain" loading="lazy" decoding="async" />
+          </div>
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">Lymfestelsel</h2>
+            <div class="mt-3">
+              <span class="inline-flex rounded-full border border-black/55 px-6 py-2 text-[clamp(0.9rem,1.05vw,1.2rem)] leading-none tracking-[-0.01em] dark:border-white/55">Water</span>
+            </div>
+            <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Water is balans en bescherming. Het lymfestelsel verzamelt en transporteert vloeistof, voert afvalstoffen af en ondersteunt het immuunsysteem. Het reageert op veranderingen in het interne milieu en past zich continu aan. Water bewaakt grenzen, reguleert vochtbalans en ondersteunt herstel van weefsels en organen. Water registreert stress en helpt signalen van het zenuwstelsel en het immuunsysteem te coordineren. Het maakt empathie, adaptief gedrag en interne balans mogelijk.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img
+            src="/assets/images/human/human-circle.webp"
+            alt="Visual van wisselwerking"
+            class="aspect-[2/3] w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">Wisselwerking</h2>
+          <div class="mt-8 space-y-8">
+            <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]"><strong>Lucht + water &rarr; gevoel en waarneming</strong> - Het zenuwstelsel registreert prikkels en stuurt signalen naar het limbisch systeem, dat emoties en geheugen verwerkt. Het lymfesysteem en immuunsysteem ondersteunen dit door interne balans te bewaren. Samen zorgen ze voor adaptief gedrag, empathie en het vermogen om prikkels juist te interpreteren.</p>
+            <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]"><strong>Aarde + vuur &rarr; actie en expressie</strong> - Het skelet, de spieren en fascia vormen het fundament waarop hart en bloedvaten werken. Zuurstofrijk bloed en voedingsstoffen worden efficiënt naar spieren en organen gestuurd. Structuur + energie maken beweging gericht en krachtig, en zetten intentie om in daad.</p>
+            <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]"><strong>Lucht + vuur &rarr; gerichte energie</strong> - Het zenuwstelsel coördineert hartslag en bloeddruk, optimaliseert circulatie naar actieve organen en spieren. Ritme en intentie werken samen zodat energie doelgericht wordt ingezet.</p>
+            <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]"><strong>Water + aarde &rarr; stabiliteit en herstel</strong> - Het lymfesysteem ondersteunt bindweefsel, botten en organen door afvalstoffen af te voeren en vochtbalans te reguleren. Hierdoor kan het lichaam herstellen van stress of fysieke belasting en blijft het netwerk in balans.</p>
+            <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]">De elementen overlappen constant. Structuur, energie, informatie en regulatie communiceren onafgebroken via organen en netwerken. Dat is human: een ge&iuml;ntegreerd, dynamisch systeem dat voelt, denkt, beweegt en herstelt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ShitDoneCtaSection />
+  </main>
+  <FooterNL />
+</BaseLayout>

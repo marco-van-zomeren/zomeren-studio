@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import FooterNL from '../../components/FooterNL.astro';
+---
+<BaseLayout
+  title="AI | zomeren.studio"
+  description="AI-gedreven creatieve exploratie in design, prototyping, beeld, video en muziek."
+  lang="nl"
+  enPath="/ai/"
+  nlPath="/nl/ai/"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"AI | zomeren.studio","description":"AI-gedreven creatieve exploratie in design, prototyping, beeld, video en muziek.","url":"https://zomeren.studio/nl/ai/","inLanguage":"nl-NL","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/ai/" nlHref="/nl/ai/" lang="nl" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        Altijd in de voorhoede van AI, design en innovatie.
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img
+            src="/assets/images/projects/mindstone/mindstone_design_by_wadm_1.webp"
+            alt="Mindstone AI visual"
+            class="aspect-[2/3] w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <p class="text-[clamp(2rem,2.05vw,3rem)] leading-[1.22] tracking-[-0.015em]">
+            Ik push continu aan de randen van AI, design en innovatie. Ik verken nieuwe mogelijkheden en leer alles wat dit snel evoluerende domein te bieden heeft. Van beeld- en videogeneratie tot rapid prototyping en zelfs muziekcreatie: ik duik diep in de tools die de volgende golf van creativiteit vormgeven. Voor mij is AI niet alleen een workflow-upgrade, maar een ruimte waar intu&iuml;tie, experiment en visie samenkomen en nieuwe manieren openen om ide&euml;en met presence en resonantie uit te drukken.
+          </p>
+
+          <p class="mt-12 md:mt-16">
+            <a href="/contact/" class="line-reveal-inline pb-1 text-[clamp(1.9rem,2.2vw,2.8rem)] tracking-[-0.018em]">
+              <span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Laten we werken
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterNL />
+</BaseLayout>

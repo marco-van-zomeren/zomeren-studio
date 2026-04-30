@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+<BaseLayout
+  title="Sagittarius | Astrology | zomeren.studio"
+  description="Sagittarius in astrology: core traits, strengths, challenges and symbolic meaning."
+  lang="en"
+  enPath="/astrology/sagittarius/"
+  nlPath="/nl/astrology/sagittarius/"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"Sagittarius | Astrology | zomeren.studio","description":"Sagittarius in astrology: core traits, strengths, challenges and symbolic meaning.","url":"https://zomeren.studio/astrology/sagittarius/","inLanguage":"en-US","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/astrology/sagittarius/" nlHref="/nl/astrology/sagittarius/" lang="en" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">Sagittarius is a Fire sign shaped by instinct, timing and character.</h1>
+    </section>
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <div class="flex aspect-[2/3] w-full items-center justify-center border-b border-black/20 dark:border-white/25 pb-8">
+            <img src="/assets/svg/boogschutter.svg" alt="Sagittarius symbol" class="h-44 w-44 object-contain dark:invert" />
+          </div>
+        </div>
+        <div class="hidden lg:block lg:col-span-3"></div>
+        <div class="col-span-4 lg:col-span-6">
+          <div class="space-y-10">
+            <article><h2 class="text-[clamp(1.7rem,2.2vw,2.8rem)] leading-[1.12] tracking-[-0.02em]">Core</h2><p class="mt-4 text-[clamp(1.2rem,1.55vw,2rem)] leading-[1.3] tracking-[-0.012em]">Sagittarius is oriented toward expansion, meaning, and exploration. It follows questions that lead beyond the familiar and seeks a worldview that connects experience with truth.</p></article>
+            <article><h2 class="text-[clamp(1.7rem,2.2vw,2.8rem)] leading-[1.12] tracking-[-0.02em]">Strengths</h2><p class="mt-4 text-[clamp(1.2rem,1.55vw,2rem)] leading-[1.3] tracking-[-0.012em]">Sagittarius offers optimism, vision, and intellectual freedom. It can inspire movement, reframe limitations, and open strategic direction through big-picture thinking.</p></article>
+            <article><h2 class="text-[clamp(1.7rem,2.2vw,2.8rem)] leading-[1.12] tracking-[-0.02em]">Challenges</h2><p class="mt-4 text-[clamp(1.2rem,1.55vw,2rem)] leading-[1.3] tracking-[-0.012em]">A broad horizon can reduce attention to detail. Sagittarius may promise faster than it can implement. Development comes from pairing vision with structure and accountability.</p></article>
+          </div>
+          <p class="mt-12 md:mt-16"><a href="/astrology/" class="line-reveal-inline pb-1 text-[clamp(1.9rem,2.2vw,2.8rem)] tracking-[-0.018em]"><span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Back to astrology</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

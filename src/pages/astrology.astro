@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout
+  title="Astrology | zomeren.studio"
+  description="Explore zodiac signs, elements and symbolic meanings through a clean astrological index."
+  lang="en"
+  enPath="/astrology/"
+  nlPath="/nl/astrology/"
+  schema={`{"@context":"https://schema.org","@type":"CollectionPage","name":"Astrology | zomeren.studio","description":"Explore zodiac signs, elements and symbolic meanings through a clean astrological index.","url":"https://zomeren.studio/astrology/","inLanguage":"en-US","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/astrology/" nlHref="/nl/astrology/" lang="en" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        Astrology gives language to personality, timing and direction.
+      </h1>
+    </section>
+
+    <section data-reveal class="py-8 md:py-12" data-zodiac-filter-root>
+      <p class="max-w-[48ch] text-[clamp(2rem,2.05vw,3rem)] leading-[1.22] tracking-[-0.015em] text-black/90 dark:text-white/90">
+        A concise zodiac overview inspired by classical astrological meanings: each sign carries a distinct style,
+        motive, and way of processing life.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3 md:gap-4" data-zodiac-filters>
+        <button type="button" data-filter="earth"
+          class="rounded-full border border-black/40 dark:border-white/40 px-6 py-3 text-[clamp(1rem,1.1vw,1.3rem)] leading-none tracking-[0.02em] uppercase">Earth</button>
+        <button type="button" data-filter="air"
+          class="rounded-full border border-black/40 dark:border-white/40 px-6 py-3 text-[clamp(1rem,1.1vw,1.3rem)] leading-none tracking-[0.02em] uppercase">Air</button>
+        <button type="button" data-filter="fire"
+          class="rounded-full border border-black/40 dark:border-white/40 px-6 py-3 text-[clamp(1rem,1.1vw,1.3rem)] leading-none tracking-[0.02em] uppercase">Fire</button>
+        <button type="button" data-filter="water"
+          class="rounded-full border border-black/40 dark:border-white/40 px-6 py-3 text-[clamp(1rem,1.1vw,1.3rem)] leading-none tracking-[0.02em] uppercase">Water</button>
+        <button type="button" data-filter-reset aria-label="Reset zodiac filter"
+          class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-black/40 dark:border-white/40">
+          <span class="material-symbols-outlined text-[1.4rem] leading-none">replay</span>
+        </button>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3" data-zodiac-grid>
+        <article data-element="fire" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/ram.svg" alt="Aries symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Aries</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Fire</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Direct, initiating, and courageous. Aries moves first, learns by doing, and brings momentum where things feel stuck.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/aries/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+
+        <article data-element="earth" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/stier.svg" alt="Taurus symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Taurus</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Earth</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Steady, sensual, and practical. Taurus builds security over time and values consistency, quality, and trust.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/taurus/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+
+        <article data-element="air" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/tweelingen.svg" alt="Gemini symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Gemini</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Air</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Curious, adaptable, and mentally quick. Gemini connects ideas and people through language, wit, and perspective.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/gemini/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+
+        <article data-element="water" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/kreeft.svg" alt="Cancer symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Cancer</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Water</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Protective, intuitive, and emotionally aware. Cancer reads the room deeply and creates belonging through care.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/cancer/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+
+        <article data-element="fire" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/leeuw.svg" alt="Leo symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Leo</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Fire</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Expressive, warm, and creative. Leo leads from the heart and shines when purpose and recognition align.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/leo/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+
+        <article data-element="earth" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/maagd.svg" alt="Virgo symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Virgo</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Earth</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Precise, analytical, and service-driven. Virgo refines systems and turns complexity into practical clarity.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/virgo/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+
+        <article data-element="air" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/weegschaal.svg" alt="Libra symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Libra</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Air</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Relational, diplomatic, and aesthetic. Libra seeks balance, fairness, and intelligent partnership.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/libra/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+
+        <article data-element="water" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/schorpioen.svg" alt="Scorpio symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Scorpio</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Water</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Intense, focused, and transformative. Scorpio searches for depth, truth, and emotional honesty.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/scorpio/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+
+        <article data-element="fire" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/boogschutter.svg" alt="Sagittarius symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Sagittarius</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Fire</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Visionary, exploratory, and freedom-seeking. Sagittarius expands horizons through meaning and experience.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/sagittarius/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+
+        <article data-element="earth" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/steenbok.svg" alt="Capricorn symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Capricorn</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Earth</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Strategic, disciplined, and enduring. Capricorn commits to long-term results and meaningful responsibility.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/capricorn/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+
+        <article data-element="air" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/waterman.svg" alt="Aquarius symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Aquarius</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Air</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Independent, inventive, and future-oriented. Aquarius challenges norms and thinks in systems and progress.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/aquarius/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+
+        <article data-element="water" class="border-b border-black/25 dark:border-white/25 pb-8 pt-2 flex flex-col">
+          <img src="/assets/svg/vissen.svg" alt="Pisces symbol" class="h-20 w-20 object-contain dark:invert" />
+          <h2 class="mt-5 text-[2rem] leading-none tracking-[-0.02em]">Pisces</h2>
+          <p class="mt-3 inline-flex w-fit self-start items-center rounded-full border border-black/45 dark:border-white/45 px-6 py-2 text-[0.75rem] uppercase tracking-[0.08em]">Water</p>
+          <p class="mt-5 text-[clamp(1rem,1.2vw,1.4rem)] leading-[1.35] text-black/90 dark:text-white/90">Empathic, imaginative, and symbolic. Pisces senses subtleties and translates emotion into meaning.</p>
+          <p class="mt-6 w-fit self-start"><a data-zodiac-read-more href="/astrology/pisces/" class="inline-flex w-fit items-center rounded-full bg-black px-6 py-3 text-[clamp(0.95rem,1vw,1.15rem)] leading-none tracking-[0.02em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85">Read more</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

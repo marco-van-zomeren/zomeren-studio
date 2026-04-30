@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+<BaseLayout
+  title="Gemini | Astrology | zomeren.studio"
+  description="Gemini in astrology: core traits, strengths, challenges and symbolic meaning."
+  lang="en"
+  enPath="/astrology/gemini/"
+  nlPath="/nl/astrology/gemini/"
+  ogImage="https://zomeren.studio/assets/images/marco/marco_van_zomeren_studio.webp"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"Gemini | Astrology | zomeren.studio","description":"Gemini in astrology: core traits, strengths, challenges and symbolic meaning.","url":"https://zomeren.studio/astrology/gemini/","inLanguage":"en-US","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/astrology/gemini/" nlHref="/nl/astrology/gemini/" lang="en" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+      <section data-reveal class="py-10 md:py-16">
+        <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">Gemini is an Air sign shaped by instinct, timing and character.</h1>
+      </section>
+      <section data-reveal class="py-10 md:py-14">
+        <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+          <div class="col-span-4 lg:col-span-3">
+            <div class="flex aspect-[2/3] w-full items-center justify-center border-b border-black/20 dark:border-white/25 pb-8">
+              <img src="/assets/svg/tweelingen.svg" alt="Gemini symbol" class="h-44 w-44 object-contain dark:invert" />
+            </div>
+          </div>
+          <div class="hidden lg:block lg:col-span-3"></div>
+          <div class="col-span-4 lg:col-span-6">
+            <div class="space-y-10">
+              <article><h2 class="text-[clamp(1.7rem,2.2vw,2.8rem)] leading-[1.12] tracking-[-0.02em]">Core</h2><p class="mt-4 text-[clamp(1.2rem,1.55vw,2rem)] leading-[1.3] tracking-[-0.012em]">Gemini processes life through curiosity, exchange, and perspective. It gathers information quickly, links patterns, and stays mentally mobile. The core need is movement through ideas and dialogue.</p></article>
+              <article><h2 class="text-[clamp(1.7rem,2.2vw,2.8rem)] leading-[1.12] tracking-[-0.02em]">Strengths</h2><p class="mt-4 text-[clamp(1.2rem,1.55vw,2rem)] leading-[1.3] tracking-[-0.012em]">Gemini excels at translation, communication, and connection. It makes complex topics accessible, asks sharp questions, and keeps systems adaptive by introducing alternatives and fresh viewpoints.</p></article>
+              <article><h2 class="text-[clamp(1.7rem,2.2vw,2.8rem)] leading-[1.12] tracking-[-0.02em]">Challenges</h2><p class="mt-4 text-[clamp(1.2rem,1.55vw,2rem)] leading-[1.3] tracking-[-0.012em]">Without focus, Gemini can scatter attention. Too many inputs may weaken depth or follow-through. Mastery comes from selecting priorities and giving promising ideas enough structure to land.</p></article>
+            </div>
+            <p class="mt-12 md:mt-16"><a href="/astrology/" class="line-reveal-inline pb-1 text-[clamp(1.9rem,2.2vw,2.8rem)] tracking-[-0.018em]"><span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Back to astrology</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+  <Footer />
+</BaseLayout>

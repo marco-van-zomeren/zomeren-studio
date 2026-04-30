@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import FooterNL from '../../components/FooterNL.astro';
+---
+<BaseLayout
+  title="Motion | zomeren.studio"
+  description="Motion design dat merkeigenheid vertaalt naar beweging, ritme en resonantie."
+  lang="nl"
+  enPath="/motion/"
+  nlPath="/nl/motion/"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"Motion | zomeren.studio","description":"Motion design dat merkeigenheid vertaalt naar beweging, ritme en resonantie.","url":"https://zomeren.studio/nl/motion/","inLanguage":"nl-NL","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/motion/" nlHref="/nl/motion/" lang="nl" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        Ik vertaal de essentie van een merk naar motion en design dat spreekt, beweegt en resoneert.
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <video class="aspect-[2/3] w-full object-cover" autoplay loop muted playsinline preload="metadata">
+            <source src="/assets/video/work.webm" type="video/webm" />
+          </video>
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <p class="text-[clamp(2rem,2.05vw,3rem)] leading-[1.22] tracking-[-0.015em]">
+            Met motion design vertaal ik de essentie van een klant naar bewegende merkbelevingen, waarbij visuele identiteit en energie samenvallen met de flow die al in beweging is. Dit is design met presence, resonantie en de magie wanneer strategie en soul samenkomen.
+          </p>
+
+          <p class="mt-12 md:mt-16">
+            <a href="/contact/" class="line-reveal-inline pb-1 text-[clamp(1.9rem,2.2vw,2.8rem)] tracking-[-0.018em]">
+              <span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Laten we werken
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterNL />
+</BaseLayout>

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import FooterNL from '../../components/FooterNL.astro';
+---
+<BaseLayout
+  title="Branding | zomeren.studio"
+  description="Merkstrategie en identiteit die de essentie van een klant vertaalt naar visuele synergie."
+  lang="nl"
+  enPath="/branding/"
+  nlPath="/nl/branding/"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"Branding | zomeren.studio","description":"Merkstrategie en identiteit die de essentie van een klant vertaalt naar visuele synergie.","url":"https://zomeren.studio/nl/branding/","inLanguage":"nl-NL","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/branding/" nlHref="/nl/branding/" lang="nl" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        Ik blend design met holisme om de essentie van een klant te decoderen en te vertalen naar visuele synergie.
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img
+            src="/assets/images/projects/medigo/1_medigo_design-by-wadm.webp"
+            alt="Medigo branding visual"
+            class="aspect-[2/3] w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <p class="text-[clamp(2rem,2.05vw,3rem)] leading-[1.22] tracking-[-0.015em]">
+            Ik cre&euml;er altijd brand experiences die resoneren met het hoogste potentieel van mijn klanten, waarbij visuele identiteit en energie aansluiten op het momentum dat al in beweging is. Dit is geen design voor het algoritme. Dit is design met presence. Gebouwd op ritme, resonantie en de magie die ontstaat wanneer strategie en soul samenkomen. Wanneer de juiste structuur het juiste momentum ontmoet.
+          </p>
+
+          <p class="mt-12 md:mt-16">
+            <a href="/contact/" class="line-reveal-inline pb-1 text-[clamp(1.9rem,2.2vw,2.8rem)] tracking-[-0.018em]">
+              <span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Laten we werken
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterNL />
+</BaseLayout>

@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout
+  title="Music | zomeren.studio"
+  description="Electronic releases by Marco van Zomeren, from pounding beats to sizzling synths and bombastic basslines."
+  lang="en"
+  enPath="/music/"
+  nlPath="/nl/music/"
+  schema={`{"@context":"https://schema.org","@type":"CollectionPage","name":"Music | zomeren.studio","description":"Electronic releases by Marco van Zomeren, from pounding beats to sizzling synths and bombastic basslines.","url":"https://zomeren.studio/music/","inLanguage":"en-US","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/music/" nlHref="/nl/music/" lang="en" />
+  <main class="px-6 pb-24 pt-24 md:px-12 md:pb-36 md:pt-28">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        Marco Van Zomeren releases on Spotify.
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <p class="max-w-[30ch] text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em] text-black/85 dark:text-white/85">
+        Marco van Zomeren is on a quest to find the musical equivalent of himself through audio experiments, which are typically characterized by pounding beats, sizzling synths, and bombastic basslines. Music often described as electronic.
+      </p>
+
+      <div class="mt-12">
+        <div class="swiper music-swiper music-slider-bleed overflow-visible">
+          <div class="swiper-wrapper">
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/floating.jpeg" alt="Floating cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/album/73gUtaEDC7wGhZc9Q4UBoO?si=icnRC2aEQ_WCGfFR6sxAOQ" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Floating</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2026</span></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/evi.jpeg" alt="EVI cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/search/marco%20van%20zomeren%20evi" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">EVI</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2026</span></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/amethyst.jpeg" alt="Amethyst cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/search/marco%20van%20zomeren%20amethyst" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Amethyst</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2022</span></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/colds.jpeg" alt="Colds cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/search/marco%20van%20zomeren%20colds" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Colds</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2021</span></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/go.jpeg" alt="Go cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/search/marco%20van%20zomeren%20go" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Go</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2020</span></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/higher-grounds.jpeg" alt="Higher Grounds cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/search/marco%20van%20zomeren%20higher%20grounds" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Higher Grounds</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2020</span></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/systole.jpeg" alt="Systole cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/search/marco%20van%20zomeren%20systole" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Systole</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2019</span></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/misere.jpeg" alt="Misere cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/search/marco%20van%20zomeren%20misere" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Mis&egrave;re</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2019</span></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/avance.jpeg" alt="Avance cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/search/marco%20van%20zomeren%20avance" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Avance</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2019</span></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/strandwandeling.jpeg" alt="Strandwandeling cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/search/marco%20van%20zomeren%20strandwandeling" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Strandwandeling</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2018</span></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/vloeistof.jpeg" alt="Vloeistof cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/search/marco%20van%20zomeren%20vloeistof" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Vloeistof</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2018</span></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="music-release-card pb-8">
+                <figure class="relative">
+                  <img src="/assets/images/music/doorgaan.jpeg" alt="Doorgaan cover" class="aspect-square w-full object-cover" loading="lazy" decoding="async" />
+                  <a href="https://open.spotify.com/search/marco%20van%20zomeren%20doorgaan" target="_blank" rel="noreferrer noopener" aria-label="Play release on Spotify" class="absolute left-1/2 top-1/2 z-20 inline-flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_0_1px_rgba(255,255,255,0.35)]">
+                    <span class="material-symbols-outlined music-play-icon text-[2.6rem] leading-none">play_arrow</span>
+                  </a>
+                </figure>
+                <h2 class="mt-4 text-[clamp(1.6rem,2vw,2.6rem)] leading-[1.1] tracking-[-0.015em]">Doorgaan</h2>
+                <div class="mt-5"><span class="inline-flex rounded-full border border-black/55 px-6 py-2 leading-none tracking-[-0.01em] dark:border-white/55">2018</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="mt-8 flex justify-end gap-4">
+          <button type="button" aria-label="Previous release"
+            class="music-prev material-symbols-outlined flex h-16 w-16 items-center justify-center rounded-full border border-black/40 text-[2rem] dark:border-white/45">
+            chevron_left
+          </button>
+          <button type="button" aria-label="Next release"
+            class="music-next material-symbols-outlined flex h-16 w-16 items-center justify-center rounded-full border border-black/60 text-[2rem] dark:border-white/75">
+            chevron_right
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

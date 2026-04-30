@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout
+  title="Design On Acid | zomeren.studio"
+  description="Design On Acid showcases leading designers, agencies, graphics and motion through a holistic lens."
+  lang="en"
+  enPath="/doa/"
+  nlPath="/nl/doa/"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"Design On Acid | zomeren.studio","description":"Design On Acid showcases leading designers, agencies, graphics and motion through a holistic lens.","url":"https://zomeren.studio/doa/","inLanguage":"en-US","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/doa/" nlHref="/nl/doa/" lang="en" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        Design On Acid is a growing community where graphics and motion intertwine in search of visual ecstasy.
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img
+            src="/assets/images/marco/marco_van_zomeren_studio_4.webp"
+            alt="Marco van Zomeren - studio"
+            class="aspect-[2/3] w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <p class="text-[clamp(2rem,2.05vw,3rem)] leading-[1.22] tracking-[-0.015em]">
+            Join us on our journey to discover visual ecstasy in design, where graphics and motion intertwine. Design On Acid provides a holistic point of view on branding by sharing the work and insights of leading designers and agencies. The community now reaches 5k+ followers on LinkedIn, 4k+ on TikTok, 5k+ on Instagram, and 9k+ on Threads.
+          </p>
+
+          <p class="mt-12 md:mt-16">
+            <a href="https://designonacid.com/" target="_blank" rel="noreferrer noopener" class="line-reveal-inline pb-1 text-[clamp(1.9rem,2.2vw,2.8rem)] tracking-[-0.018em]">
+              <span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Discover DOA
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

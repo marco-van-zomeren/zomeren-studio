@@ -1,0 +1,26 @@
+---
+const { sectionClass = 'py-24 md:py-32' } = Astro.props;
+---
+<section data-reveal class={sectionClass}>
+  <div data-parallax-wrap class="relative pb-12 md:pb-16">
+    <p class="text-left text-[clamp(2.6rem,11vw,12rem)] leading-[0.9] tracking-[-0.03em] font-[700]">Now let&rsquo;s get</p>
+    <p class="text-right text-[clamp(2.6rem,11vw,12rem)] leading-[0.9] tracking-[-0.03em] font-[700]">some shit</p>
+
+    <figure
+      data-speed="-150"
+      class="relative z-20 mt-2 w-[58vw] max-w-[24rem] will-change-transform md:absolute md:left-0 md:top-[33%] md:mt-0 md:w-[28vw] md:max-w-none"
+    >
+      <img
+        src="/assets/images/projects/ultimo/1-ultimo-design-by-wadm.webp"
+        alt="Ultimo project visual"
+        class="aspect-[4/3] w-full object-cover"
+      />
+    </figure>
+
+    <p class="text-left text-[clamp(2.6rem,11vw,12rem)] leading-[0.9] tracking-[-0.03em] font-[700]">done today</p>
+  </div>
+
+  <a href="/contact/" class="line-reveal-inline w-fit pb-1 text-[clamp(2rem,3.6vw,4.3rem)] tracking-[-0.02em]">
+    <span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Let&rsquo;s work
+  </a>
+</section>

@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import FooterNL from '../../../components/FooterNL.astro';
+---
+<BaseLayout
+  title="Waterman | Astrologie | zomeren.studio"
+  description="Waterman in astrologie: kernkwaliteiten, krachten, uitdagingen en symbolische betekenis."
+  lang="nl"
+  enPath="/astrology/aquarius/"
+  nlPath="/nl/astrology/aquarius/"
+  ogImage="https://zomeren.studio/assets/images/marco/marco_van_zomeren_studio.webp"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"Waterman | Astrologie | zomeren.studio","description":"Waterman in astrologie: kernkwaliteiten, krachten, uitdagingen en symbolische betekenis.","url":"https://zomeren.studio/nl/astrology/aquarius/","inLanguage":"nl-NL","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/astrology/aquarius/" nlHref="/nl/astrology/aquarius/" lang="nl" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">Waterman is een teken van het element Lucht, gevormd door instinct, timing en karakter.</h1>
+    </section>
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <div class="flex aspect-[2/3] w-full items-center justify-center border-b border-black/20 dark:border-white/25 pb-8">
+            <img src="/assets/svg/waterman.svg" alt="Waterman symbool" class="h-44 w-44 object-contain dark:invert" />
+          </div>
+        </div>
+        <div class="hidden lg:block lg:col-span-3"></div>
+        <div class="col-span-4 lg:col-span-6">
+          <div class="space-y-10">
+            <article><h2 class="text-[clamp(1.7rem,2.2vw,2.8rem)] leading-[1.12] tracking-[-0.02em]">Kern</h2><p class="mt-4 text-[clamp(1.2rem,1.55vw,2rem)] leading-[1.3] tracking-[-0.012em]">Waterman wordt gedreven door innovatie, systeemdenken en toekomstgerichtheid. Dit teken bevraagt het bestaande en zoekt vooruitgang met collectieve waarde.</p></article>
+            <article><h2 class="text-[clamp(1.7rem,2.2vw,2.8rem)] leading-[1.12] tracking-[-0.02em]">Krachten</h2><p class="mt-4 text-[clamp(1.2rem,1.55vw,2rem)] leading-[1.3] tracking-[-0.012em]">Waterman brengt originaliteit, onafhankelijkheid en conceptuele helderheid. Het kan verouderde kaders herontwerpen en nieuwe oplossingen introduceren.</p></article>
+            <article><h2 class="text-[clamp(1.7rem,2.2vw,2.8rem)] leading-[1.12] tracking-[-0.02em]">Uitdagingen</h2><p class="mt-4 text-[clamp(1.2rem,1.55vw,2rem)] leading-[1.3] tracking-[-0.012em]">Afstand kan doorschieten in vervreemding. Waterman kan idee boven emotionele realiteit zetten. Groei komt door idealen te verbinden met menselijke context.</p></article>
+          </div>
+          <p class="mt-12 md:mt-16"><a href="/nl/astrology/" class="line-reveal-inline pb-1 text-[clamp(1.9rem,2.2vw,2.8rem)] tracking-[-0.018em]"><span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Terug naar astrologie</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterNL />
+</BaseLayout>

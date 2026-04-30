@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout
+  title="UI/UX | zomeren.studio"
+  description="User-centered digital experiences shaped by clarity, structure and holistic thinking."
+  lang="en"
+  enPath="/ui-ux/"
+  nlPath="/nl/ui-ux/"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"UI/UX | zomeren.studio","description":"User-centered digital experiences shaped by clarity, structure and holistic thinking.","url":"https://zomeren.studio/ui-ux/","inLanguage":"en-US","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/ui-ux/" nlHref="/nl/ui-ux/" lang="en" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        I merge user-centric design with a holistic perspective to translate it into clear, coherent interfaces.
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img
+            src="/assets/images/projects/ultimo/1-ultimo-design-by-wadm.webp"
+            alt="Ultimo UI/UX visual"
+            class="aspect-[2/3] w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <p class="text-[clamp(2rem,2.05vw,3rem)] leading-[1.22] tracking-[-0.015em]">
+            I design digital experiences that move with the user&rsquo;s natural flow. Instead of shaping interfaces around trends or algorithms, I build products around clarity, behavior, and momentum. It&rsquo;s an approach rooted in rhythm and structure, where strategy guides every interaction and every touchpoint feels intentional. When the right logic meets the right energy, the experience becomes effortless.
+          </p>
+
+          <div class="mt-12 flex flex-wrap items-end gap-6 md:mt-16">
+            <a
+              href="/website-journey/"
+              class="inline-flex w-fit items-center rounded-full bg-black px-6 py-2.5 text-[clamp(1.2rem,1.5vw,2rem)] leading-[1.25] tracking-[-0.012em] text-white dark:bg-white dark:text-black"
+            >
+              Website journey
+            </a>
+            <a href="/contact/" class="line-reveal-inline pb-1 text-[clamp(1.2rem,1.5vw,2rem)] tracking-[-0.018em]">
+              <span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Let&rsquo;s work
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

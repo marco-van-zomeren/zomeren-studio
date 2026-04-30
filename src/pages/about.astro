@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout
+  title="About | zomeren.studio"
+  description="About Marco van Zomeren and zomeren.studio, a Dutch boutique studio at the intersection of design, music and astrology."
+  lang="en"
+  enPath="/about/"
+  nlPath="/nl/about/"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"About | zomeren.studio","description":"About Marco van Zomeren and zomeren.studio, a Dutch boutique studio at the intersection of design, music and astrology.","url":"https://zomeren.studio/about/","inLanguage":"en-US","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/about/" nlHref="/nl/about/" lang="en" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        A dutch boutique studio at the intersection of design, music and astrology.
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img
+            src="/assets/images/marco/marco_van_zomeren_studio_3.webp"
+            alt="Marco van Zomeren - studio"
+            class="aspect-[2/3] w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <p class="text-[clamp(2rem,2.05vw,3rem)] leading-[1.22] tracking-[-0.015em]">
+            Marco van Zomeren is a Senior visual designer at KR communicatie and freelancer / music producer in his spare time. Within zomeren.studio he explores the balance between clarity and charisma, where design meets emotional intelligence, and branding moves beyond visuals into something stellar.
+          </p>
+
+          <p class="mt-12 md:mt-16">
+            <a href="/contact/" class="line-reveal-inline pb-1 text-[clamp(1.9rem,2.2vw,2.8rem)] tracking-[-0.018em]">
+              <span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Let&rsquo;s work
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

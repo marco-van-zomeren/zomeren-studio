@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ShitDoneCtaSection from '../components/ShitDoneCtaSection.astro';
+---
+<BaseLayout
+  title="Human | zomeren.studio"
+  description="Four human systems, one integrated network: structure, information, circulation and regulation."
+  lang="en"
+  enPath="/human/"
+  nlPath="/nl/human/"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"Human | zomeren.studio","description":"Four human systems, one integrated network: structure, information, circulation and regulation.","url":"https://zomeren.studio/human/","inLanguage":"en-US","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/human/" nlHref="/nl/human/" lang="en" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        Underneath the human skin, four fundamental systems intertwine
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img
+            src="/assets/images/human/human-transparent.webp"
+            alt="Human systems visual"
+            class="aspect-[2/3] w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]">
+            The human body is not a collection of separate parts. It is a network. Beneath the skin, four fundamental systems intertwine: a supporting structure, a network that processes information, a stream that transports energy, and a system that protects and restores. What was once called earth, air, fire, and water can now be recognized in the body in physical and functional form. Four elements. Four networks. One integrated system.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section data-reveal class="py-8 md:py-12">
+      <div class="space-y-12 md:space-y-16">
+        <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="/assets/svg/earth-human-skeleton.svg" alt="Earth - skeletal system" class="human-element-icon h-[clamp(5rem,10vw,20rem)] w-auto max-h-[20rem] max-w-[20rem] object-contain" loading="lazy" decoding="async" />
+          </div>
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">Skeleton</h2>
+            <div class="mt-3">
+              <span class="inline-flex rounded-full border border-black/55 px-6 py-2 text-[clamp(0.9rem,1.05vw,1.2rem)] leading-none tracking-[-0.01em] dark:border-white/55">Earth</span>
+            </div>
+            <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Earth is the foundation. The skeleton provides form, while connective tissue and fascia bind everything into one continuous network. Without this base, movement cannot be coordinated and force cannot be directed. Structure supports and limits at the same time. It enables freedom by providing stability.
+            </p>
+          </div>
+        </article>
+
+        <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="/assets/svg/air-human-nervous-system.svg" alt="Air - nervous system" class="human-element-icon h-[clamp(5rem,10vw,20rem)] w-auto max-h-[20rem] max-w-[20rem] object-contain" loading="lazy" decoding="async" />
+          </div>
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">Nervous systems</h2>
+            <div class="mt-3">
+              <span class="inline-flex rounded-full border border-black/55 px-6 py-2 text-[clamp(0.9rem,1.05vw,1.2rem)] leading-none tracking-[-0.01em] dark:border-white/55">Air</span>
+            </div>
+            <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Air is direction and communication. The central and peripheral nervous systems process sensory input, activate muscles, and coordinate reflexes. It is a network of rapid electrical impulses and chemical signaling that enables awareness, thinking, and decision-making. Air interprets the world, translates experience into action, and forms the bridge between perception and intention.
+            </p>
+          </div>
+        </article>
+
+        <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="/assets/svg/fire-human-circulatory-system.svg" alt="Fire - circulatory system" class="human-element-icon h-[clamp(5rem,10vw,20rem)] w-auto max-h-[20rem] max-w-[20rem] object-contain" loading="lazy" decoding="async" />
+          </div>
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">Heart and blood vessels</h2>
+            <div class="mt-3">
+              <span class="inline-flex rounded-full border border-black/55 px-6 py-2 text-[clamp(0.9rem,1.05vw,1.2rem)] leading-none tracking-[-0.01em] dark:border-white/55">Fire</span>
+            </div>
+            <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Fire is movement and distribution. The heart and blood vessels form a circulatory system that delivers oxygen and nutrients to every cell. Heat, energy, and rhythm move through this network. Fire activates, stimulates, and makes expression possible. It turns direction (air) into action and fuels the whole system.
+            </p>
+          </div>
+        </article>
+
+        <article class="grid grid-cols-4 gap-8 border-b border-black/40 dark:border-white/40 pb-10 md:pb-12 lg:grid-cols-12">
+          <div class="col-span-1 lg:col-span-2">
+            <img src="/assets/svg/water-human-lympathic-system.svg" alt="Water - lymphatic system" class="human-element-icon h-[clamp(5rem,10vw,20rem)] w-auto max-h-[20rem] max-w-[20rem] object-contain" loading="lazy" decoding="async" />
+          </div>
+          <div class="col-span-3 lg:col-span-8">
+            <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">Lymphatic system</h2>
+            <div class="mt-3">
+              <span class="inline-flex rounded-full border border-black/55 px-6 py-2 text-[clamp(0.9rem,1.05vw,1.2rem)] leading-none tracking-[-0.01em] dark:border-white/55">Water</span>
+            </div>
+            <p class="mt-4 text-[clamp(1.05rem,1.3vw,1.9rem)] leading-[1.3] tracking-[-0.01em] text-black/92 dark:text-white/92">
+              Water is balance and protection. The lymphatic system collects and transports fluid, clears waste, and supports immunity. It responds to internal change and constantly adapts. Water protects boundaries, regulates fluid balance, and supports tissue and organ recovery. It registers stress and helps coordinate signaling between the nervous and immune systems. It enables empathy, adaptive behavior, and internal balance.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img
+            src="/assets/images/human/human-circle.webp"
+            alt="Interplay visual"
+            class="aspect-[2/3] w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <h2 class="text-[clamp(2.2rem,3.7vw,5rem)] leading-none tracking-[-0.02em]">Interplay</h2>
+          <div class="mt-8 space-y-8">
+            <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]"><strong>Air + water &rarr; feeling and perception</strong> - The nervous system detects stimuli and sends signals to the limbic system, where emotion and memory are processed. The lymphatic and immune systems support this by preserving internal balance. Together, they enable adaptive behavior, empathy, and accurate interpretation of input.</p>
+            <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]"><strong>Earth + fire &rarr; action and expression</strong> - The skeleton, muscles, and fascia form the base on which the heart and blood vessels operate. Oxygen-rich blood and nutrients are delivered efficiently to muscles and organs. Structure + energy make movement focused and powerful, converting intent into action.</p>
+            <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]"><strong>Air + fire &rarr; directed energy</strong> - The nervous system coordinates heart rate and blood pressure, optimizing circulation toward active organs and muscles. Rhythm and intent work together so energy is deployed with precision.</p>
+            <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]"><strong>Water + earth &rarr; stability and recovery</strong> - The lymphatic system supports connective tissue, bones, and organs by clearing waste and regulating fluid balance. This allows the body to recover from stress or physical load and keeps the network in equilibrium.</p>
+            <p class="text-[clamp(1.4rem,2vw,2.7rem)] leading-[1.24] tracking-[-0.012em]">The elements constantly overlap. Structure, energy, information, and regulation communicate continuously through organs and networks. That is human: an integrated, dynamic system that feels, thinks, moves, and restores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ShitDoneCtaSection />
+  </main>
+  <Footer />
+</BaseLayout>

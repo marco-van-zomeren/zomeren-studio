@@ -1,0 +1,422 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+#app{display:flex;gap:0;height:600px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+#sidebar{width:220px;min-width:220px;background:var(--color-background-secondary);border-right:0.5px solid var(--color-border-tertiary);display:flex;flex-direction:column;overflow-y:auto}
+#canvas-wrap{flex:1;background:#1a1a2e;position:relative;overflow:hidden;cursor:crosshair}
+canvas{position:absolute;top:0;left:0}
+.section{padding:12px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.section-title{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
+.row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+label{font-size:12px;color:var(--color-text-secondary);flex:1}
+input[type=range]{flex:2;height:3px}
+span.val{font-size:12px;font-weight:500;min-width:24px;text-align:right;color:var(--color-text-primary)}
+input[type=color]{width:40px;height:28px;border:0.5px solid var(--color-border-secondary);border-radius:4px;cursor:pointer;background:none;padding:2px}
+.btn{width:100%;padding:7px 10px;font-size:12px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);cursor:pointer;margin-bottom:6px;text-align:left}
+.btn:hover{background:var(--color-background-secondary)}
+.btn.primary{background:var(--color-text-primary);color:var(--color-background-primary);border-color:transparent}
+.btn.primary:hover{opacity:0.85}
+.point-info{font-size:12px;color:var(--color-text-secondary);padding:10px 12px;line-height:1.6}
+.tag{display:inline-block;font-size:10px;padding:2px 6px;border-radius:3px;background:var(--color-background-info);color:var(--color-text-info);margin-bottom:6px}
+#col-preview{width:100%;height:32px;border-radius:4px;border:0.5px solid var(--color-border-tertiary);margin-bottom:8px}
+</style>
+
+<div id="app">
+  <div id="sidebar">
+    <div class="section">
+      <div class="section-title">Mesh grid</div>
+      <div class="row"><label>Columns</label><input type="range" id="cols" min="2" max="8" value="4" step="1"><span class="val" id="cols-v">4</span></div>
+      <div class="row"><label>Rows</label><input type="range" id="rows" min="2" max="8" value="4" step="1"><span class="val" id="rows-v">4</span></div>
+      <button class="btn" onclick="regenerateMesh()">Regenerate mesh</button>
+    </div>
+    <div class="section">
+      <div class="section-title">Selected point</div>
+      <div id="point-panel">
+        <div class="point-info">Click a mesh point to select and edit its color.</div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Presets</div>
+      <button class="btn" onclick="applyPreset('sunset')">Sunset</button>
+      <button class="btn" onclick="applyPreset('ocean')">Ocean</button>
+      <button class="btn" onclick="applyPreset('aurora')">Aurora</button>
+      <button class="btn" onclick="applyPreset('candy')">Candy</button>
+      <button class="btn" onclick="randomizeColors()">Randomize</button>
+    </div>
+    <div class="section">
+      <div class="section-title">Export</div>
+      <button class="btn primary" onclick="exportSVG()">Export SVG</button>
+      <button class="btn" onclick="exportPNG()">Export PNG</button>
+    </div>
+  </div>
+  <div id="canvas-wrap">
+    <canvas id="bg"></canvas>
+    <canvas id="fg"></canvas>
+  </div>
+</div>
+
+<script>
+const bgCanvas = document.getElementById('bg');
+const fgCanvas = document.getElementById('fg');
+const bgCtx = bgCanvas.getContext('2d');
+const fgCtx = fgCanvas.getContext('2d');
+const wrap = document.getElementById('canvas-wrap');
+
+let W, H;
+let cols = 4, rows = 4;
+let points = [];
+let selectedPt = null;
+let dragging = null;
+let POINT_R = 8;
+
+function resize(){
+  W = wrap.clientWidth;
+  H = wrap.clientHeight;
+  bgCanvas.width = fgCanvas.width = W;
+  bgCanvas.height = fgCanvas.height = H;
+  drawAll();
+}
+
+function mkColor(h,s,l){
+  const a = s*Math.min(l,1-l)/100;
+  const f = n => {
+    const k=(n+h/30)%12;
+    const color=l/100-a*Math.max(Math.min(k-3,9-k,1),-1);
+    return Math.round(255*color);
+  };
+  return `rgb(${f(0)},${f(8)},${f(4)})`;
+}
+
+function hexToRgb(hex){
+  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  return [r,g,b];
+}
+
+function rgbToHex(r,g,b){
+  return '#'+[r,g,b].map(x=>Math.round(x).toString(16).padStart(2,'0')).join('');
+}
+
+function lerp(a,b,t){return a+(b-a)*t}
+
+function lerpColor(c1,c2,t){
+  return [lerp(c1[0],c2[0],t),lerp(c1[1],c2[1],t),lerp(c1[2],c2[2],t)];
+}
+
+function generatePoints(){
+  points = [];
+  const pad = 40;
+  for(let r=0;r<=rows;r++){
+    for(let c=0;c<=cols;c++){
+      const tx = c/cols, ty = r/rows;
+      const jx = (r>0&&r<rows&&c>0&&c<cols)?((Math.random()-0.5)*0.18):0;
+      const jy = (r>0&&r<rows&&c>0&&c<cols)?((Math.random()-0.5)*0.18):0;
+      points.push({
+        x:(tx+jx)*(W-pad*2)+pad,
+        y:(ty+jy)*(H-pad*2)+pad,
+        r: parseInt(Math.random()*256),
+        g: parseInt(Math.random()*256),
+        b: parseInt(Math.random()*256),
+        row:r, col:c
+      });
+    }
+  }
+}
+
+const PRESETS = {
+  sunset:[
+    [255,100,80],[255,160,50],[255,80,120],[200,60,40],
+    [255,140,60],[255,200,80],[180,40,80],[120,30,60],
+    [255,180,100],[255,220,120],[220,80,100],[160,50,70],
+    [255,200,150],[255,240,180],[240,120,140],[200,80,100]
+  ],
+  ocean:[
+    [0,50,180],[0,100,200],[20,150,220],[60,180,240],
+    [0,80,160],[10,120,190],[30,160,210],[70,200,230],
+    [0,120,150],[20,150,180],[40,180,200],[80,210,220],
+    [10,160,130],[30,180,160],[50,200,180],[90,220,210]
+  ],
+  aurora:[
+    [20,180,120],[80,220,160],[140,100,200],[60,240,180],
+    [40,200,140],[100,240,180],[160,120,220],[80,255,200],
+    [60,160,200],[120,200,240],[180,80,220],[100,220,255],
+    [80,120,240],[140,160,255],[200,60,200],[120,180,255]
+  ],
+  candy:[
+    [255,100,150],[255,150,200],[200,100,255],[150,200,255],
+    [255,120,180],[255,180,220],[220,120,255],[180,220,255],
+    [255,160,200],[255,200,240],[240,160,255],[200,240,255],
+    [255,180,220],[255,220,250],[250,180,255],[220,250,255]
+  ]
+};
+
+function applyPreset(name){
+  const p=PRESETS[name];
+  const n=(rows+1)*(cols+1);
+  for(let i=0;i<points.length;i++){
+    const c=p[i%p.length];
+    points[i].r=c[0];points[i].g=c[1];points[i].b=c[2];
+  }
+  drawAll();
+}
+
+function randomizeColors(){
+  points.forEach(p=>{p.r=Math.random()*255|0;p.g=Math.random()*255|0;p.b=Math.random()*255|0;});
+  drawAll();
+}
+
+function regenerateMesh(){
+  cols=parseInt(document.getElementById('cols').value);
+  rows=parseInt(document.getElementById('rows').value);
+  generatePoints();
+  selectedPt=null;
+  updatePointPanel();
+  drawAll();
+}
+
+function getPointAt(r,c){
+  return points.find(p=>p.row===r&&p.col===c);
+}
+
+function bilinearColor(r0,c0,tx,ty){
+  const tl=getPointAt(r0,c0);
+  const tr=getPointAt(r0,c0+1);
+  const bl=getPointAt(r0+1,c0);
+  const br=getPointAt(r0+1,c0+1);
+  if(!tl||!tr||!bl||!br)return[200,200,200];
+  const top=lerpColor([tl.r,tl.g,tl.b],[tr.r,tr.g,tr.b],tx);
+  const bot=lerpColor([bl.r,bl.g,bl.b],[br.r,br.g,br.b],tx);
+  return lerpColor(top,bot,ty);
+}
+
+function drawMesh(){
+  const res=3;
+  for(let row=0;row<rows;row++){
+    for(let col=0;col<cols;col++){
+      const p00=getPointAt(row,col);
+      const p10=getPointAt(row,col+1);
+      const p01=getPointAt(row+1,col);
+      const p11=getPointAt(row+1,col+1);
+      if(!p00||!p10||!p01||!p11)continue;
+      const steps=Math.ceil(Math.max(
+        Math.abs(p10.x-p00.x),Math.abs(p01.y-p00.y),
+        Math.abs(p11.x-p01.x),Math.abs(p10.y-p00.y)
+      )/res)+1;
+      for(let si=0;si<steps;si++){
+        for(let sj=0;sj<steps;sj++){
+          const tx=si/steps, ty=sj/steps;
+          const tx2=(si+1)/steps, ty2=(sj+1)/steps;
+          const blerp=(fx,fy)=>{
+            const top=[lerp(p00.x,p10.x,fx),lerp(p00.y,p10.y,fx)];
+            const bot=[lerp(p01.x,p11.x,fx),lerp(p01.y,p11.y,fx)];
+            return [lerp(top[0],bot[0],fy),lerp(top[1],bot[1],fy)];
+          };
+          const [x0,y0]=blerp(tx,ty);
+          const [x1,y1]=blerp(tx2,ty);
+          const [x2,y2]=blerp(tx2,ty2);
+          const [x3,y3]=blerp(tx,ty2);
+          const col_=bilinearColor(row,col,tx+(tx2-tx)/2,ty+(ty2-ty)/2);
+          bgCtx.fillStyle=`rgb(${col_[0]|0},${col_[1]|0},${col_[2]|0})`;
+          bgCtx.beginPath();
+          bgCtx.moveTo(x0,y0);bgCtx.lineTo(x1,y1);bgCtx.lineTo(x2,y2);bgCtx.lineTo(x3,y3);
+          bgCtx.closePath();bgCtx.fill();
+        }
+      }
+    }
+  }
+}
+
+function drawGrid(){
+  fgCtx.clearRect(0,0,W,H);
+  fgCtx.strokeStyle='rgba(255,255,255,0.25)';
+  fgCtx.lineWidth=0.5;
+  for(let r=0;r<=rows;r++){
+    fgCtx.beginPath();
+    for(let c=0;c<=cols;c++){
+      const p=getPointAt(r,c);
+      if(!p)continue;
+      c===0?fgCtx.moveTo(p.x,p.y):fgCtx.lineTo(p.x,p.y);
+    }
+    fgCtx.stroke();
+  }
+  for(let c=0;c<=cols;c++){
+    fgCtx.beginPath();
+    for(let r=0;r<=rows;r++){
+      const p=getPointAt(r,c);
+      if(!p)continue;
+      r===0?fgCtx.moveTo(p.x,p.y):fgCtx.lineTo(p.x,p.y);
+    }
+    fgCtx.stroke();
+  }
+  points.forEach(p=>{
+    const isSel=selectedPt&&selectedPt.row===p.row&&selectedPt.col===p.col;
+    fgCtx.beginPath();
+    fgCtx.arc(p.x,p.y,isSel?POINT_R+2:POINT_R,0,Math.PI*2);
+    fgCtx.fillStyle=isSel?'#fff':`rgba(255,255,255,0.85)`;
+    fgCtx.fill();
+    fgCtx.strokeStyle=isSel?'#000':'rgba(0,0,0,0.4)';
+    fgCtx.lineWidth=isSel?2:1;
+    fgCtx.stroke();
+    fgCtx.beginPath();
+    fgCtx.arc(p.x,p.y,isSel?POINT_R-3:POINT_R-4,0,Math.PI*2);
+    fgCtx.fillStyle=`rgb(${p.r},${p.g},${p.b})`;
+    fgCtx.fill();
+  });
+}
+
+function drawAll(){
+  bgCtx.clearRect(0,0,W,H);
+  drawMesh();
+  drawGrid();
+}
+
+function ptAt(mx,my){
+  let best=null,bestD=Infinity;
+  points.forEach(p=>{
+    const d=Math.hypot(p.x-mx,p.y-my);
+    if(d<bestD){bestD=d;best=p;}
+  });
+  return bestD<20?best:null;
+}
+
+function updatePointPanel(){
+  const pp=document.getElementById('point-panel');
+  if(!selectedPt){
+    pp.innerHTML='<div class="point-info">Click a mesh point to select and edit its color.</div>';
+    return;
+  }
+  const hex=rgbToHex(selectedPt.r,selectedPt.g,selectedPt.b);
+  pp.innerHTML=`
+    <div style="padding:0 0 8px">
+      <div class="tag">Row ${selectedPt.row} · Col ${selectedPt.col}</div>
+      <div id="col-preview" style="background:${hex}"></div>
+      <div class="row">
+        <label>Color</label>
+        <input type="color" id="ptcolor" value="${hex}">
+      </div>
+      <div class="row"><label>R</label><input type="range" id="pr" min="0" max="255" value="${selectedPt.r}" step="1"><span class="val" id="prv">${selectedPt.r}</span></div>
+      <div class="row"><label>G</label><input type="range" id="pg" min="0" max="255" value="${selectedPt.g}" step="1"><span class="val" id="pgv">${selectedPt.g}</span></div>
+      <div class="row"><label>B</label><input type="range" id="pb" min="0" max="255" value="${selectedPt.b}" step="1"><span class="val" id="pbv">${selectedPt.b}</span></div>
+    </div>`;
+  document.getElementById('ptcolor').oninput=e=>{
+    const [r,g,b]=hexToRgb(e.target.value);
+    selectedPt.r=r;selectedPt.g=g;selectedPt.b=b;
+    document.getElementById('pr').value=r;document.getElementById('prv').textContent=r;
+    document.getElementById('pg').value=g;document.getElementById('pgv').textContent=g;
+    document.getElementById('pb').value=b;document.getElementById('pbv').textContent=b;
+    document.getElementById('col-preview').style.background=e.target.value;
+    drawAll();
+  };
+  ['r','g','b'].forEach(ch=>{
+    document.getElementById('p'+ch).oninput=e=>{
+      selectedPt[ch]=parseInt(e.target.value);
+      document.getElementById('p'+ch+'v').textContent=e.target.value;
+      const hex2=rgbToHex(selectedPt.r,selectedPt.g,selectedPt.b);
+      document.getElementById('ptcolor').value=hex2;
+      document.getElementById('col-preview').style.background=hex2;
+      drawAll();
+    };
+  });
+}
+
+fgCanvas.addEventListener('mousedown',e=>{
+  const rect=fgCanvas.getBoundingClientRect();
+  const mx=e.clientX-rect.left,my=e.clientY-rect.top;
+  const pt=ptAt(mx,my);
+  if(pt){dragging=pt;selectedPt=pt;updatePointPanel();drawAll();}
+  else{selectedPt=null;updatePointPanel();drawAll();}
+});
+
+fgCanvas.addEventListener('mousemove',e=>{
+  if(!dragging)return;
+  const rect=fgCanvas.getBoundingClientRect();
+  dragging.x=Math.max(0,Math.min(W,e.clientX-rect.left));
+  dragging.y=Math.max(0,Math.min(H,e.clientY-rect.top));
+  drawAll();
+});
+
+fgCanvas.addEventListener('mouseup',()=>{dragging=null;});
+fgCanvas.addEventListener('mouseleave',()=>{dragging=null;});
+
+fgCanvas.addEventListener('touchstart',e=>{
+  e.preventDefault();
+  const rect=fgCanvas.getBoundingClientRect();
+  const t=e.touches[0];
+  const mx=t.clientX-rect.left,my=t.clientY-rect.top;
+  const pt=ptAt(mx,my);
+  if(pt){dragging=pt;selectedPt=pt;updatePointPanel();drawAll();}
+},{passive:false});
+
+fgCanvas.addEventListener('touchmove',e=>{
+  e.preventDefault();
+  if(!dragging)return;
+  const rect=fgCanvas.getBoundingClientRect();
+  const t=e.touches[0];
+  dragging.x=Math.max(0,Math.min(W,t.clientX-rect.left));
+  dragging.y=Math.max(0,Math.min(H,t.clientY-rect.top));
+  drawAll();
+},{passive:false});
+
+fgCanvas.addEventListener('touchend',()=>{dragging=null;});
+
+document.getElementById('cols').oninput=e=>{document.getElementById('cols-v').textContent=e.target.value;};
+document.getElementById('rows').oninput=e=>{document.getElementById('rows-v').textContent=e.target.value;};
+
+function exportSVG(){
+  const cellRes=4;
+  let svgPaths='';
+  for(let row=0;row<rows;row++){
+    for(let col=0;col<cols;col++){
+      const p00=getPointAt(row,col);
+      const p10=getPointAt(row,col+1);
+      const p01=getPointAt(row+1,col);
+      const p11=getPointAt(row+1,col+1);
+      if(!p00||!p10||!p01||!p11)continue;
+      const steps=cellRes;
+      for(let si=0;si<steps;si++){
+        for(let sj=0;sj<steps;sj++){
+          const tx=si/steps,ty=sj/steps,tx2=(si+1)/steps,ty2=(sj+1)/steps;
+          const blerp=(fx,fy)=>{
+            const top=[lerp(p00.x,p10.x,fx),lerp(p00.y,p10.y,fx)];
+            const bot=[lerp(p01.x,p11.x,fx),lerp(p01.y,p11.y,fx)];
+            return [lerp(top[0],bot[0],fy),lerp(top[1],bot[1],fy)];
+          };
+          const [x0,y0]=blerp(tx,ty);
+          const [x1,y1]=blerp(tx2,ty);
+          const [x2,y2]=blerp(tx2,ty2);
+          const [x3,y3]=blerp(tx,ty2);
+          const mc=(tx+tx2)/2,mr=(ty+ty2)/2;
+          const c_=bilinearColor(row,col,mc,mr);
+          const hex=rgbToHex(c_[0],c_[1],c_[2]);
+          svgPaths+=`<polygon points="${x0.toFixed(1)},${y0.toFixed(1)} ${x1.toFixed(1)},${y1.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)} ${x3.toFixed(1)},${y3.toFixed(1)}" fill="${hex}"/>`;
+        }
+      }
+    }
+  }
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">\n${svgPaths}\n</svg>`;
+  const blob=new Blob([svg],{type:'image/svg+xml'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='gradient-mesh.svg';
+  a.click();
+}
+
+function exportPNG(){
+  const out=document.createElement('canvas');
+  out.width=W;out.height=H;
+  const ctx=out.getContext('2d');
+  ctx.drawImage(bgCanvas,0,0);
+  const a=document.createElement('a');
+  a.href=out.toDataURL('image/png');
+  a.download='gradient-mesh.png';
+  a.click();
+}
+
+window.addEventListener('resize',()=>{
+  resize();
+});
+
+resize();
+generatePoints();
+applyPreset('sunset');
+</script>

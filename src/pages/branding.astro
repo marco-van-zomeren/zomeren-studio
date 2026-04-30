@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout
+  title="Branding | zomeren.studio"
+  description="Brand strategy and identity design that translate a client's essence into visual synergy."
+  lang="en"
+  enPath="/branding/"
+  nlPath="/nl/branding/"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"Branding | zomeren.studio","description":"Brand strategy and identity design that translate a client's essence into visual synergy.","url":"https://zomeren.studio/branding/","inLanguage":"en-US","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/branding/" nlHref="/nl/branding/" lang="en" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        I blend design with holism to decode a client&rsquo;s essence and translate it into visual synergy.
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img
+            src="/assets/images/projects/medigo/1_medigo_design-by-wadm.webp"
+            alt="Medigo branding visual"
+            class="aspect-[2/3] w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <p class="text-[clamp(2rem,2.05vw,3rem)] leading-[1.22] tracking-[-0.015em]">
+            I always create brand experiences that resonate with the clients highest potential, aligning visual identity and energy with the momentum that&rsquo;s already moving. This isn&rsquo;t design for the algorithm. It&rsquo;s design with presence. Built on rhythm, resonance, and the magic that happens when strategy meets soul. When the right structure meets the right momentum.
+          </p>
+
+          <p class="mt-12 md:mt-16">
+            <a href="/contact/" class="line-reveal-inline pb-1 text-[clamp(1.9rem,2.2vw,2.8rem)] tracking-[-0.018em]">
+              <span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.15em;">east</span> Let&rsquo;s work
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

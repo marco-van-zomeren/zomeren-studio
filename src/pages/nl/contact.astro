@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import FooterNL from '../../components/FooterNL.astro';
+---
+<BaseLayout
+  title="Contact | zomeren.studio"
+  description="Start een branding-, motion-, UI/UX- of AI-project met zomeren.studio."
+  lang="nl"
+  enPath="/contact/"
+  nlPath="/nl/contact/"
+  schema={`{"@context":"https://schema.org","@type":"WebPage","name":"Contact | zomeren.studio","description":"Start een branding-, motion-, UI/UX- of AI-project met zomeren.studio.","url":"https://zomeren.studio/nl/contact/","inLanguage":"nl-NL","isPartOf":{"@type":"WebSite","name":"zomeren.studio","url":"https://zomeren.studio/"}}`}
+>
+  <Header enHref="/contact/" nlHref="/nl/contact/" lang="nl" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <section data-reveal class="py-10 md:py-16">
+      <h1 class="fade-in-stagger m-0 text-[clamp(2.4rem,5vw,7rem)] leading-[1.08] tracking-[-0.022em]">
+        Laten we iets bouwen dat resoneert.
+      </h1>
+    </section>
+
+    <section data-reveal class="py-10 md:py-14">
+      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
+        <div class="col-span-4 lg:col-span-3">
+          <img src="/assets/images/marco/marco_van_zomeren_studio_1.webp" alt="Marco van Zomeren - studio"
+            class="aspect-[2/3] w-full object-cover" loading="eager" decoding="async" />
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="col-span-4 lg:col-span-6">
+          <p class="text-[clamp(2rem,2.05vw,3rem)] leading-[1.22] tracking-[-0.015em]">
+            Ben je klaar om een merk te bouwen met helderheid, presence en momentum? Vertel me je uitdaging, planning en
+            doelen, dan kom ik terug met een scherpe richting voor hoe we samen vooruit kunnen bewegen.
+          </p>
+
+          <div class="mt-12 md:mt-16">
+            <a href="https://bz0nwly3czu.typeform.com/to/sZj0mM9g?typeform-source=zomeren.studio" target="_blank"
+              rel="noreferrer noopener"
+              class="inline-flex items-center justify-center rounded-full bg-black px-8 py-4 text-[clamp(1.5rem,1.9vw,2.4rem)] leading-none tracking-[-0.01em] text-white transition-colors duration-200 hover:bg-black/85 dark:bg-white dark:text-black dark:hover:bg-white/85 md:px-10 md:py-5">
+              Laten we werken
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterNL />
+</BaseLayout>
