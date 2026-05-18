@@ -6,10 +6,18 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "postinstall": "node scripts/patch-netlify-adapter.mjs"
   },
   "dependencies": {
-    "astro": "^6.1.10"
+    "@astrojs/netlify": "^8.0.0-alpha.0",
+    "@astrojs/node": "^10.1.1",
+    "@astrojs/react": "^5.0.5",
+    "@keystatic/astro": "^5.0.6",
+    "@keystatic/core": "^0.5.50",
+    "astro": "^6.1.10",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.24",

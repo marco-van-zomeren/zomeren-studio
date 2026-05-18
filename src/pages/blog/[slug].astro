@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+<BaseLayout
+  title={`${post.data.title} | zomeren.studio`}
+  description={post.data.description}
+  lang="en"
+  enPath={`/blog/${post.id}/`}
+  nlPath={`/nl/blog/${post.id}/`}
+>
+  <Header enHref={`/blog/${post.id}/`} nlHref={`/nl/blog/${post.id}/`} lang="en" />
+  <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
+    <article>
+      <section data-reveal class="py-10 md:py-16">
+        <a href="/blog/" class="text-[clamp(1.4rem,1.2vw,2rem)] tracking-[-0.01em] text-black/50 dark:text-white/50 hover:opacity-70 transition-opacity">&larr; Blog</a>
+        <p class="mt-8 text-[clamp(1.4rem,1.2vw,2rem)] tracking-[-0.01em] text-black/50 dark:text-white/50">{post.data.pubDate}</p>
+        <h1 class="mt-4 max-w-[24ch] text-[clamp(2.4rem,5vw,7rem)] leading-[1.02] tracking-[-0.024em] font-[700]">{post.data.title}</h1>
+        <p class="mt-6 max-w-[55ch] text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.25] tracking-[-0.015em] text-black/70 dark:text-white/70">{post.data.description}</p>
+        {post.data.tags && (
+          <ul class="mt-6 flex gap-2 flex-wrap">
+            {post.data.tags.map((tag) => (
+              <li class="text-[clamp(1.3rem,1vw,1.7rem)] tracking-[-0.01em] bg-black/5 dark:bg-white/10 px-3 py-1 rounded-full">{tag}</li>
+            ))}
+          </ul>
+        )}
+      </section>
+      <section data-reveal class="prose prose-lg max-w-[70ch] pt-4 pb-20 text-[clamp(1.7rem,1.5vw,2.4rem)] leading-[1.55] tracking-[-0.012em]">
+        <Content />
+      </section>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
