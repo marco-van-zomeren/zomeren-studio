@@ -10,7 +10,7 @@
     "postinstall": "node scripts/patch-netlify-adapter.mjs"
   },
   "dependencies": {
-    "@astrojs/netlify": "^8.0.0-alpha.0",
+    "@astrojs/netlify": "^7.0.10",
     "@astrojs/node": "^10.1.1",
     "@astrojs/react": "^5.0.5",
     "@keystatic/astro": "^5.0.6",
