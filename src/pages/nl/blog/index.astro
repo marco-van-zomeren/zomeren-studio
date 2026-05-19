@@ -48,12 +48,14 @@ const posts = await client.fetch(`
                     </ul>
                   )}
                 </div>
-                {post.headerImage && (
+                {post.headerImage ? (
                   <img
                     src={urlFor(post.headerImage).width(400).height(300).fit('crop').url()}
                     alt={post.headerImage.alt ?? post.title}
                     class="mt-6 md:mt-0 w-full md:w-[22rem] aspect-[4/3] object-cover"
                   />
+                ) : (
+                  <div class="mt-6 md:mt-0 w-full md:w-[22rem] aspect-[4/3] bg-black/5 dark:bg-white/5" />
                 )}
               </a>
             </li>
