@@ -10,14 +10,10 @@
     "postinstall": "node scripts/patch-netlify-adapter.mjs"
   },
   "dependencies": {
-    "@astrojs/netlify": "^7.0.10",
-    "@astrojs/node": "^10.1.1",
-    "@astrojs/react": "^5.0.5",
-    "@keystatic/astro": "^5.0.6",
-    "@keystatic/core": "^0.5.50",
+    "@sanity/client": "^7.22.0",
     "astro": "^6.1.10",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "groq": "^5.25.1",
+    "sanity": "^5.25.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.24",

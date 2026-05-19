@@ -2,45 +2,58 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Header from '../../../components/Header.astro';
 import FooterNL from '../../../components/FooterNL.astro';
-import { getCollection, render } from 'astro:content';
+import { client } from '../../../lib/sanity';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  const posts = await client.fetch(`*[_type == "post"]{ slug }`);
+  return posts.map((post: any) => ({ params: { slug: post.slug.current } }));
 }
 
-const { post } = Astro.props;
-const { Content } = await render(post);
+const { slug } = Astro.params;
+const post = await client.fetch(`
+  *[_type == "post" && slug.current == $slug][0] {
+    title, slug, description, publishedAt, tags, body
+  }
+`, { slug });
 ---
 <BaseLayout
-  title={`${post.data.title} | zomeren.studio`}
-  description={post.data.description}
+  title={`${post.title} | zomeren.studio`}
+  description={post.description ?? ''}
   lang="nl"
-  enPath={`/blog/${post.id}/`}
-  nlPath={`/nl/blog/${post.id}/`}
+  enPath={`/blog/${slug}/`}
+  nlPath={`/nl/blog/${slug}/`}
 >
-  <Header enHref={`/blog/${post.id}/`} nlHref={`/nl/blog/${post.id}/`} lang="nl" />
+  <Header enHref={`/blog/${slug}/`} nlHref={`/nl/blog/${slug}/`} lang="nl" />
   <main class="px-6 pb-24 pt-20 md:px-12 md:pb-36 md:pt-24">
     <article>
       <section data-reveal class="py-10 md:py-16">
         <a href="/nl/blog/" class="text-[clamp(1.4rem,1.2vw,2rem)] tracking-[-0.01em] text-black/50 dark:text-white/50 hover:opacity-70 transition-opacity">&larr; Blog</a>
-        <p class="mt-8 text-[clamp(1.4rem,1.2vw,2rem)] tracking-[-0.01em] text-black/50 dark:text-white/50">{post.data.pubDate}</p>
-        <h1 class="mt-4 max-w-[24ch] text-[clamp(2.4rem,5vw,7rem)] leading-[1.02] tracking-[-0.024em] font-[700]">{post.data.title}</h1>
-        <p class="mt-6 max-w-[55ch] text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.25] tracking-[-0.015em] text-black/70 dark:text-white/70">{post.data.description}</p>
-        {post.data.tags && (
+        <p class="mt-8 text-[clamp(1.4rem,1.2vw,2rem)] tracking-[-0.01em] text-black/50 dark:text-white/50">
+          {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}
+        </p>
+        <h1 class="mt-4 max-w-[24ch] text-[clamp(2.4rem,5vw,7rem)] leading-[1.02] tracking-[-0.024em] font-[700]">{post.title}</h1>
+        {post.description && (
+          <p class="mt-6 max-w-[55ch] text-[clamp(1.8rem,1.6vw,2.6rem)] leading-[1.25] tracking-[-0.015em] text-black/70 dark:text-white/70">{post.description}</p>
+        )}
+        {post.tags && post.tags.length > 0 && (
           <ul class="mt-6 flex gap-2 flex-wrap">
-            {post.data.tags.map((tag) => (
+            {post.tags.map((tag: string) => (
               <li class="text-[clamp(1.3rem,1vw,1.7rem)] tracking-[-0.01em] bg-black/5 dark:bg-white/10 px-3 py-1 rounded-full">{tag}</li>
             ))}
           </ul>
         )}
       </section>
-      <section data-reveal class="prose prose-lg max-w-[70ch] pt-4 pb-20 text-[clamp(1.7rem,1.5vw,2.4rem)] leading-[1.55] tracking-[-0.012em]">
-        <Content />
-      </section>
+      {post.body && (
+        <section data-reveal class="max-w-[70ch] pb-20 text-[clamp(1.7rem,1.5vw,2.4rem)] leading-[1.55] tracking-[-0.012em] space-y-6">
+          {post.body.map((block: any) => {
+            if (block._type !== 'block') return null;
+            const text = block.children?.map((c: any) => c.text).join('') ?? '';
+            if (block.style === 'h2') return <h2 class="text-[clamp(2rem,2.5vw,3.8rem)] font-[600] leading-[1.1] tracking-[-0.02em] mt-12 mb-4">{text}</h2>;
+            if (block.style === 'h3') return <h3 class="text-[clamp(1.8rem,2vw,3rem)] font-[600] leading-[1.15] tracking-[-0.018em] mt-8 mb-3">{text}</h3>;
+            return <p>{text}</p>;
+          })}
+        </section>
+      )}
     </article>
   </main>
   <FooterNL />
