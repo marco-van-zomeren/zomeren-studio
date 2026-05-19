@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "postinstall": "node scripts/patch-netlify-adapter.mjs"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@sanity/client": "^7.22.0",
