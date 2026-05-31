@@ -74,9 +74,9 @@ const baseMeta = {
     title: "Holism | zomeren.studio",
     description: "Holistic brand strategy and astrology-informed identity work by Marco van Zomeren."
   },
-  "branergy-method.html": {
-    title: "Branergy Method | zomeren.studio",
-    description: "Branergy is a holistic method that helps brands discover their true potential and express it fully."
+  "acid-method.html": {
+    title: "ACID Method | zomeren.studio",
+    description: "The ACID method: a holistic brand strategy framework using astrological elements as creative compass."
   },
   "human.html": {
     title: "Human | zomeren.studio",
@@ -177,9 +177,9 @@ const nlOverrides = {
     title: "Holisme | zomeren.studio",
     description: "Holistische merkstrategie en astrologisch geinformeerd identiteitswerk door Marco van Zomeren."
   },
-  "nl/branergy-methode.html": {
-    title: "Branergy Methode | zomeren.studio",
-    description: "Branergy is een holistische methode die merken helpt hun ware potentieel te ontdekken en volledig uit te drukken."
+  "nl/acid-methode.html": {
+    title: "ACID Methode | zomeren.studio",
+    description: "De ACID Methode is een holistische methode die merken helpt hun ware potentieel te ontdekken en volledig uit te drukken."
   },
   "nl/human.html": {
     title: "Mens | zomeren.studio",
@@ -212,8 +212,8 @@ const nlOverrides = {
 };
 
 const duplicateCanonicals = {
-  "branergy-methode.html": "nl/branergy-methode.html",
-  "nl/branergy-method.html": "nl/branergy-methode.html"
+  "acid-methode.html": "nl/acid-methode.html",
+  "nl/acid-method.html": "nl/acid-methode.html"
 };
 
 function walkHtmlFiles(dir, out = []) {
@@ -241,8 +241,8 @@ function canonicalRel(relPath) {
 }
 
 function counterpartRel(relPath) {
-  if (relPath === "branergy-method.html") return "nl/branergy-methode.html";
-  if (relPath === "nl/branergy-methode.html") return "branergy-method.html";
+  if (relPath === "acid-method.html") return "nl/acid-methode.html";
+  if (relPath === "nl/acid-methode.html") return "acid-method.html";
   if (relPath.startsWith("nl/")) {
     const candidate = relPath.slice(3);
     return fs.existsSync(path.join(siteRoot, candidate)) ? candidate : null;
