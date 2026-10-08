@@ -3,6 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ShitDoneCtaSection from '../components/ShitDoneCtaSection.astro';
+import blijdorpMark from '../../assets/svg/blijdorp.svg';
+import dhlVan from '../../assets/svg/dhl.svg';
+import mdlKids from '../../assets/images/home/mdl_kids.png';
+
+const assetSrc = (asset: string | { src: string }) => typeof asset === 'string' ? asset : asset.src;
+const blijdorpSrc = assetSrc(blijdorpMark);
+const dhlSrc = assetSrc(dhlVan);
+const mdlKidsSrc = assetSrc(mdlKids);
 ---
 <BaseLayout
   title="zomeren.studio | Making brands resonate with their highest potential"
@@ -136,29 +144,20 @@ import ShitDoneCtaSection from '../components/ShitDoneCtaSection.astro';
       </div>
     </section>
 
-    <section data-reveal class="px-6 pb-28 md:px-12 md:pb-40 py-40">
-      <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
-        <div class="col-span-4 lg:col-span-2">
-          <p class="mt-[0.75em] text-[clamp(1.2rem,1.8vw,1.9rem)] leading-none tracking-[-0.01em]">02</p>
-        </div>
-
-        <div class="relative col-span-4 lg:col-span-6">
-          <p class="absolute left-0 top-1 text-[clamp(0.85rem,0.95vw,1rem)] uppercase tracking-[0.08em]">WORK</p>
-          <p
-            class="m-0 max-w-[24ch] text-[clamp(2rem,3vw,6rem)] font-semibold leading-[1.08] tracking-[-0.02em] [text-indent:clamp(4rem,12vw,15rem)]">
-            Design Lead at DPDK. Working on brands such as Blijdorp, DHL, MDL and TCX. Projects ranging from Brand Focus
-            programmes to the realization of interactive installations. A broad variety of challenges where a passion for
-            design and motion comes together.
-          </p>
-        </div>
-
-        <div class="col-span-4 flex items-start justify-start lg:col-span-4 lg:justify-end">
-          <a href="https://dpdk.com/" target="_blank" rel="noreferrer noopener"
-            class="line-reveal-inline pb-1 text-[clamp(1.3rem,1.6vw,2.1rem)] uppercase tracking-[-0.012em]">
-            <span class="material-symbols-outlined" style="font-size:1em;position:relative;top:0.1em;">east</span>
-            DISCOVER DPDK
-          </a>
-        </div>
+    <section data-reveal class="work-statement-section bg-black py-32 text-white md:py-40">
+      <div class="mx-auto w-full max-w-[1800px]">
+        <p class="work-statement m-0 font-bold text-white/50">
+          Marco is a design lead at <a href="https://dpdk.com/" target="_blank" rel="noreferrer noopener">DPDK</a>.
+          Working on brands such as <span class="work-statement__brand"><strong>Blijdorp</strong>
+          <img src={blijdorpSrc} alt="" aria-hidden="true" class="work-statement__asset work-statement__asset--blijdorp" loading="lazy" />,</span>
+          <span class="work-statement__brand"><strong>DHL</strong>
+          <img src={dhlSrc} alt="" aria-hidden="true" class="work-statement__asset work-statement__asset--dhl" loading="lazy" />,</span>
+          <span class="work-statement__brand"><strong>MDL</strong>
+          <img src={mdlKidsSrc} alt="" aria-hidden="true" class="work-statement__asset work-statement__asset--mdl" loading="lazy" /></span>
+          and <strong>TCX</strong>. Projects ranging from <strong class="work-statement__brand">Brand Focus</strong> programmes to the realization of
+          interactive installations. A broad variety of challenges where his passion for
+          <strong>design and motion</strong> merges together into visual ecstasy.
+        </p>
       </div>
     </section>
 
