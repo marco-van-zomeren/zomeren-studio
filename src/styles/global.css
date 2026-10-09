@@ -32,6 +32,11 @@ html:not(.is-loading):not(.is-transitioning) footer {
 }
 
 @media (max-width: 767px) {
+  main .page-copy {
+    font-size: 1.3rem;
+    line-height: 1.25;
+  }
+
   header.fixed.inset-x-0.top-0 {
     mix-blend-mode: difference;
   }
