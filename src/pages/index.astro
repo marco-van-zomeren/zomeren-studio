@@ -3,14 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ShitDoneCtaSection from '../components/ShitDoneCtaSection.astro';
-import blijdorpMark from '../../assets/svg/blijdorp.svg';
-import dhlVan from '../../assets/svg/dhl.svg';
-import mdlKids from '../../assets/images/home/mdl_kids.png';
-
-const assetSrc = (asset: string | { src: string }) => typeof asset === 'string' ? asset : asset.src;
-const blijdorpSrc = assetSrc(blijdorpMark);
-const dhlSrc = assetSrc(dhlVan);
-const mdlKidsSrc = assetSrc(mdlKids);
+import WorkStatement from '../components/WorkStatement.astro';
 ---
 <BaseLayout
   title="zomeren.studio | Making brands resonate with their highest potential"
@@ -144,22 +137,7 @@ const mdlKidsSrc = assetSrc(mdlKids);
       </div>
     </section>
 
-    <section data-reveal class="work-statement-section bg-black py-32 text-white md:py-40">
-      <div class="mx-auto w-full max-w-[1800px]">
-        <p class="work-statement m-0 font-bold text-white/50">
-          Marco is a design lead at <a href="https://dpdk.com/" target="_blank" rel="noreferrer noopener">DPDK</a>.
-          Working on brands such as <span class="work-statement__brand"><strong>Blijdorp</strong>
-          <img src={blijdorpSrc} alt="" aria-hidden="true" class="work-statement__asset work-statement__asset--blijdorp" loading="lazy" />,</span>
-          <span class="work-statement__brand"><strong>DHL</strong>
-          <img src={dhlSrc} alt="" aria-hidden="true" class="work-statement__asset work-statement__asset--dhl" loading="lazy" />,</span>
-          <span class="work-statement__brand"><strong>MDL</strong>
-          <img src={mdlKidsSrc} alt="" aria-hidden="true" class="work-statement__asset work-statement__asset--mdl" loading="lazy" /></span>
-          and <strong>TCX</strong>. Projects ranging from <strong class="work-statement__brand">Brand Focus</strong> programmes to the realization of
-          interactive installations. A broad variety of challenges where his passion for
-          <strong>design and motion</strong> merges together into visual ecstasy.
-        </p>
-      </div>
-    </section>
+    <WorkStatement />
 
     <section data-reveal class="px-6 pb-28 md:px-12 md:pb-40 py-40">
       <div class="grid grid-cols-4 gap-8 pb-8 md:pb-10 lg:grid-cols-12">

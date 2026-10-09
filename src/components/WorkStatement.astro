@@ -1,0 +1,38 @@
+---
+import blijdorpMark from '../../assets/svg/blijdorp.svg';
+import dhlVan from '../../assets/svg/dhl.svg';
+import mdlKids from '../../assets/images/home/mdl_kids.png';
+
+interface Props {
+  lang?: 'en' | 'nl';
+}
+
+const { lang = 'en' } = Astro.props;
+const isNL = lang === 'nl';
+const assetSrc = (asset: string | { src: string }) => typeof asset === 'string' ? asset : asset.src;
+---
+
+<section data-reveal class="work-statement-section bg-black py-32 text-white md:py-40">
+  <div class="mx-auto w-full max-w-[1800px]">
+    {isNL && <p class="mb-12 text-base uppercase">02 DPDK</p>}
+    <p class="work-statement m-0 font-bold text-white/50">
+      {isNL ? 'Design Lead bij ' : 'Marco is a design lead at '}
+      <a href="https://dpdk.com/" target="_blank" rel="noreferrer noopener">DPDK</a>.
+      {isNL ? 'Werkend aan merken zoals ' : 'Working on brands such as '}
+      <span class="work-statement__brand"><a href="https://diergaardeblijdorp.nl/" target="_blank" rel="noreferrer noopener">Blijdorp
+        <img src={assetSrc(blijdorpMark)} alt="" aria-hidden="true" class="work-statement__asset work-statement__asset--blijdorp" loading="lazy" /></a>,</span>
+      <span class="work-statement__brand"><a href="https://www.dhl.com/" target="_blank" rel="noreferrer noopener">DHL
+        <img src={assetSrc(dhlVan)} alt="" aria-hidden="true" class="work-statement__asset work-statement__asset--dhl" loading="lazy" /></a>,</span>
+      <span class="work-statement__brand"><a href="https://www.mdlfonds.nl/" target="_blank" rel="noreferrer noopener">MDL
+        <img src={assetSrc(mdlKids)} alt="" aria-hidden="true" class="work-statement__asset work-statement__asset--mdl" loading="lazy" /></a></span>
+      {isNL ? 'en ' : 'and '}<a href="https://www.tcxfund.com/" target="_blank" rel="noreferrer noopener">TCX</a>.
+      {isNL ? 'Projecten variërend van ' : 'Projects ranging from '}
+      <a href="https://dpdk.com/en/method" target="_blank" rel="noreferrer noopener" class="work-statement__brand">Brand Focus</a>
+      {isNL
+        ? 'trajecten tot en met de realisatie van interactieve installaties. Een grote variatie aan uitdagingen waarbinnen de passie voor '
+        : 'programmes to the realization of interactive installations. A broad variety of challenges where his passion for '}
+      <a href="https://designonacid.com/" target="_blank" rel="noreferrer noopener">{isNL ? 'design en motion' : 'design and motion'}</a>
+      {isNL ? 'samensmelt.' : 'merges together into visual ecstasy.'}
+    </p>
+  </div>
+</section>
