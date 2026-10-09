@@ -444,7 +444,7 @@ html.js.is-loading [data-reveal] {
   width: 100%;
   max-width: none;
   height: auto;
-  transform: translateY(10%);
+  overflow: visible;
 }
 
 .footer-logo-svg img {
