@@ -21,13 +21,14 @@ import Footer from '../components/Footer.astro';
 
     <section data-reveal class="py-10 md:py-14">
       <div class="grid grid-cols-4 gap-8 lg:grid-cols-12">
-        <div class="col-span-4 lg:col-span-2">
-          <p class="mt-[0.75em] text-[clamp(1.2rem,1.8vw,1.9rem)] leading-none tracking-[-0.01em]">04</p>
+        <div class="col-span-4 flex items-baseline gap-4 lg:col-span-2 lg:block">
+          <p class="lg:mt-[0.75em] text-[clamp(1.2rem,1.8vw,1.9rem)] leading-none tracking-[-0.01em]">04</p>
+          <p class="text-[clamp(0.85rem,0.95vw,1rem)] uppercase tracking-[0.08em] lg:hidden">Skills</p>
         </div>
 
         <div class="relative col-span-4 lg:col-span-8">
-          <p class="absolute left-0 top-1 text-[clamp(0.85rem,0.95vw,1rem)] uppercase tracking-[0.08em]">Skills</p>
-          <p class="m-0 max-w-[24ch] text-[clamp(2rem,3vw,6rem)] font-semibold leading-[1.08] tracking-[-0.02em] [text-indent:clamp(4rem,12vw,15rem)]">
+          <p class="absolute left-0 top-1 hidden text-[clamp(0.85rem,0.95vw,1rem)] uppercase tracking-[0.08em] lg:block">Skills</p>
+          <p class="m-0 max-w-[24ch] text-[clamp(2rem,3vw,6rem)] font-semibold leading-[1.08] tracking-[-0.02em] lg:[text-indent:clamp(4rem,12vw,15rem)]">
             Expertises which are making brands resonate with their highest potential
           </p>
         </div>
