@@ -4,3 +4,10 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Temporary site-wide redirect. Remove this rule to restore the site.
+[[redirects]]
+  from = "https://zomeren.co/*"
+  to = "https://linktr.ee/marcovanzomeren"
+  status = 302
+  force = true
